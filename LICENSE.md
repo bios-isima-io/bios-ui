@@ -1,5 +1,3 @@
-Copyright (C) 2025 Isima, Inc.
-
 # PolyForm Free Trial License 1.0.0
 
 <https://polyformproject.org/licenses/free-trial/1.0.0>
