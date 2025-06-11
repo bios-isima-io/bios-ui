@@ -1,0 +1,918 @@
+.esl-login-signup-wrapper {
+  width: 100%;
+}
+.esl-container {
+  margin: auto;
+  box-sizing: border-box;
+  width: 530px;
+  min-width: 500px;
+  max-width: 600px;
+  height: 345px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  position: relative;
+}
+
+.esl-auth-right-container {
+  box-sizing: border-box;
+  background-color: #4d4d4d;
+  color: white;
+}
+
+
+/* left container */
+
+.esl-auth-left-container {
+  /* top: 0; */
+  box-sizing: border-box;
+  background-color: #1d1d1d;
+  cursor: pointer;
+  color: white;
+  width: 60%;
+  padding: 20px;
+  transition: width 0.7s;
+}
+
+.esl-auth-left-container-overlay {
+  margin-top: 10px;
+  visibility: hidden;
+  animation: visibilityAnimation 0s 0.6s forwards;
+}
+
+.esl-auth-right-container-overlay {
+  margin-top: 10px;
+  visibility: hidden;
+  animation: visibilityAnimation 0s 0.6s forwards;
+}
+
+.esl-auth-left-container.esl-auth-left-show-overlay .esl-left-form {
+  display: none;
+}
+
+.esl-auth-left-container .esl-auth-left-container-overlay {
+  display: none;
+}
+
+.esl-auth-left-container.esl-auth-left-show-overlay .esl-auth-left-container-overlay {
+  display: block;
+}
+
+.esl-auth-left-container-updated {
+  width: 40%;
+  padding:20px;
+}
+
+/* right container */
+
+.esl-auth-right-container {
+  width: 40%;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.7s;
+}
+
+.esl-auth-right-container.esl-auth-right-show-overlay .esl-right-form {
+  display: none;
+}
+
+.esl-auth-right-container .esl-auth-right-container-overlay {
+  display: none;
+}
+
+
+.esl-auth-right-container.esl-auth-right-show-overlay .esl-auth-right-container-overlay {
+  display: block;
+}
+
+.esl-auth-right-container-updated {
+  width: 60%;
+  padding:20px;
+}
+
+
+/* overlay inside */
+.esl-signup-login-external-header {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.esl-signup-login-external-content {
+  margin-top: 18px;
+  margin-bottom: 20px;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.esl-tagline {
+  margin-top: 15px;
+  font-weight: 600;
+  font-size:14px;
+}
+
+.esl-signup-redirect {
+  font-weight: bold;
+  position: absolute;
+  bottom: 50px;
+  font-size: 16px;
+}
+
+.esl-signup-redirect:hover, .esl-signup-redirect:hover > svg > line {
+  cursor: pointer;
+  color: #941100;
+  stroke: #941100;
+}
+
+.esl-login-redirect {
+  position: absolute;
+    bottom: 50px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.esl-login-redirect:hover, .esl-login-redirect:hover > svg > line {
+  cursor: pointer;
+  color: #941100;
+  stroke: #941100;
+}
+
+/* overlay inside end */
+
+/*
+  signup inside
+*/
+
+.esl-signup-content {
+    color: #A2A2A2;
+    font-size: 12px;
+}
+
+.esl-signup-bottom-content {
+  position: absolute;
+    bottom: 40px;
+  font-size: 12px;
+  padding-right: 30px;
+
+}
+
+.esl-signup-success-content {
+  margin-top: 30px;
+  color: white;
+  font-size: 14px;
+}
+
+.esl-signup-success-bottom-content {
+  color: #A2A2A2;
+  font-size: 12px;
+  margin-top: 15px;
+  max-width: 205px
+}
+
+.esl-signup-success {
+  padding: 15px;
+  padding-right:30px;
+  display: none;
+  z-index: 10;
+}
+
+.esl-signup-success-icon {
+  margin-top:10px;
+  fill:#DADADA !important;
+}
+
+#esl-signup-error {
+  display: none;
+}
+/*
+  signup inside end
+*/
+
+/*
+  signin inside
+*/
+
+.esl-login-bottom-content {
+  position: absolute;
+    bottom: 40px;
+    font-size: 12px;
+}
+
+#esl-signin-error {
+  display: none;
+}
+
+.esl-password-eye:hover, .esl-password-eye-invisible:hover {
+  fill: #941100;
+}
+
+
+/*
+  signin inside end
+*/
+
+
+/* form styles */
+.esl-left-form, .esl-right-form {
+  padding-top: 10px;
+  padding-left: 8px;
+  padding-right:8px;
+  animation: visibilityAnimation 0s 0.6s forwards;
+  visibility: hidden;
+}
+
+.esl-form-header {
+  margin-top: 0;
+  font-weight: bold;
+  font-size: 20px !important;
+  color: #fff !important;
+}
+
+.esl-input-field, input[type='password'].esl-input-field {
+  box-sizing: border-box;
+  background-color: #fff;
+  height: 42px !important;
+  border-radius: 2px !important;
+  width: 100%;
+  padding-left: 12px !important;
+  border: none;
+  margin-top: 10px !important;
+  margin-bottom: 6px !important;
+  font-family: RotisSemiSansStd, serif;
+  font-size: 14px !important;
+  outline: none;
+  color: black;
+  padding-top: 5px;
+}
+
+.esl-input-field-group {
+  word-wrap: revert;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.esl-input-field-group > svg {
+  position: absolute;
+  right: 10px;
+  top: 23px;
+  cursor: pointer;
+  display: none;
+}
+
+.esl-input-field-group > svg.visible {
+  display: block;
+}
+
+input::placeholder.esl-input-field {
+  color : #706E6B;
+}
+
+button.esl-signup-signin-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  height: 42px;
+  background-color: transparent;
+  color: white;
+  border-radius: 0;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid white;
+  padding-left: 25px;
+  padding-right: 25px;
+  cursor: pointer;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  padding-top: 4px;
+
+  &:hover{
+    background-color: #941100;
+    border-color: #941100;
+    color: #fff;
+  }
+
+  &:focus{
+    background-color: #000 !important;
+    color: #fff !important;
+    border-color: #000 !important;
+  }
+}
+
+.esl-forgot-password-link {
+  padding-left: 12px;
+  float :right;
+  color: #a2a2a2 !important;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.esl-forgot-password-link:hover {
+  color: #941100 !important;
+}
+
+/* form styles end*/
+.esl-solid-lines {
+  margin-left: 15px;
+  margin-bottom: 4px;
+}
+
+.esl-signup-signin-error-svg {
+  width: 15px;
+  height: 15px;
+  margin-right: 8px;
+  position: relative;
+  top: -2px;
+}
+
+
+.esl-signin-signup-error {
+  border-radius: 2px;
+  font-size: 10px;
+  font-weight: 600;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  cursor: auto;
+}
+
+@keyframes visibilityAnimation {
+  to{ visibility: visible; }
+}
+
+/* testimonials */
+.esl-testimonials-wrapper {
+  width: 100%;
+}
+
+.esl-testimonial-slider {
+  margin: auto;
+  width: 530px;
+  min-width: 500px;
+  max-width: 600px;
+  height: 265px;
+  background: #1D1D1D;
+  color: #fff;
+  overflow: auto;
+  -ms-overflow-style: none;
+  box-sizing: border-box;
+}
+
+.esl-testimonial-slides {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  background: #1D1D1D;
+  }
+
+.esl-testimonial-slides::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  background: transparent;
+}
+
+.esl-testimonial-slides::-webkit-scrollbar-thumb {
+  display: none;
+  }
+
+.esl-testimonial-slides::-webkit-scrollbar-track {
+  display: none;
+  background: transparent;
+}
+
+.esl-testimonial-slides > div {
+  display: flex;
+  height: 170px;
+  margin-right: 50px;
+  border-radius: 10px;
+  background: #1D1D1D;
+  transition: transform 0.5s;
+  position: relative;
+  font-size: 12px;
+}
+
+
+.esl-testimonial-header {
+  padding-left: 40px;
+  padding-top: 20px;
+}
+
+.esl-testimonial-quote-svg {
+  margin-left: 40px;
+  margin-top: 15px;
+}
+
+.esl-testimonial-logo-svg {
+  margin-right: 10px;
+}
+
+.esl-testimonial-body {
+  margin-left: 31px;
+  margin-top: 20px;
+  margin-right: 36px;
+  width: 397px;
+  height: 73px;
+  font-size: 14px;
+}
+
+.esl-testimonial-body-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.esl-testimonial-body-author {
+  font-weight: bold;
+}
+
+.esl-testimonial-slider-buttons {
+  float: right;
+  margin-right: 36px;
+}
+
+.esl-testimonial-previous, .esl-testimonial-next {
+  display: inline-block;
+  margin: 0 7px 7px;
+  cursor: pointer;
+}
+
+.esl-testimonial-previous:hover > svg > path, .esl-testimonial-next:hover > svg > path {
+  fill: #941100 !important;
+}
+
+/*@media only screen and (max-device-width: 480px) {
+
+  .esl-testimonial-slider {
+    width: 100%;
+    height: 400px;
+    box-sizing: border-box;
+    min-width: unset;
+  }
+
+  .esl-testimonial-slides {
+    box-sizing: border-box;
+    height: 270px;
+  }
+
+  .esl-testimonial-slides > div {
+    width: 100%;
+    margin-right: 0;
+  }
+
+
+  .esl-testimonial-slider-buttons {
+    position: relative;
+    margin-right: 40px;
+    float: right;
+  }
+
+  .esl-testimonial-previous, .esl-testimonial-next {
+    margin: 5px;
+  }
+
+  .esl-testimonial-header {
+    padding-left: 40px;
+    padding-top: 20px;
+  }
+
+  .esl-testimonial-body-footer {
+    display: block;
+    justify-content: space-between;
+  }
+
+  .esl-testimonial-body-author {
+    width: 100%;
+  }
+
+  .esl-testimonial-quote-svg {
+    width: 45px;
+    height: 45px;
+  }
+
+  .esl-testimonial-body-compony-logo {
+    margin-top: 0;
+    margin-right: 0;
+  }
+}*/
+
+
+/* frogot password model */
+#esl-forget-password-model {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(77,77,77,0.8);
+}
+
+.esl-forget-password-modal-content {
+  text-align: center;
+  color: #fff;
+  margin: 15% auto;
+  padding: 10px;
+  width: 50%;
+  background-color: black;
+  max-width: 631px;
+  font-size: 14px;
+}
+
+.esl-forget-password-main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 396px;
+  margin: 12px auto auto;
+}
+
+.esl-forget-password-modal-content-header {
+  color: #f1f1f1;
+  font-size: 20px;
+}
+
+.esl-forget-password-modal-content-subheader {
+  margin-bottom: 24px;
+  margin-top: 15px;
+}
+
+.esl-forget-password-input-field {
+  width: 230px;
+}
+
+#esl-forgot-password-error {
+  width: 240px;
+  margin: auto;
+}
+
+#esl-forgot-password-error-message {
+  display: flex;
+}
+
+.esl-forget-password-model-close {
+  padding-top: 5px;
+  padding-right: 10px;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.esl-forget-password-model-close:hover,
+.esl-forget-password-model-close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#esl-request-forget-password {
+  margin-top: 64px;
+}
+
+.esl-forgot-password-back-to-login {
+  cursor: pointer;
+  width: 180px;
+  margin: 42px auto 55px;
+}
+
+.esl-forgot-password-back-to-login:hover {
+  color: #941100;
+}
+
+.esl-forgot-password-back-to-login:hover > .esl-solid-lines > line{
+  stroke: #941100;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.7s;
+
+  &:hover{
+    color: #941100;
+
+    svg line{
+      stroke : #941100;
+    }
+  }
+}
+
+.forgot-password-success-svg {
+  margin-right: 5px;
+  padding-bottom: 3px;
+}
+
+@media only screen and (max-device-width: 480px) {
+
+  .esl-forget-password-modal-content {
+    margin: 15% auto;
+    width: 86%;
+    background-color: black;
+    font-size: 14px;
+  }
+
+  .esl-forget-password-main-content {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+[class*='button'] {
+  outline: none;
+}
+
+/*
+  ---------- Ravid modified below -----------
+*/
+.esl-testimonial-slider{
+  height: 285px;
+}
+.esl-testimonial-body-main {
+  font-family: RotisSemiSansStd, serif !important;
+  line-height: 1.6;
+  word-spacing: .5px;
+  font-size: 16px;
+  font-weight: 400 !important;
+}
+.esl-testimonial-body-main a {
+  font-family: RotisSemiSansStd, serif !important;
+  font-weight: bold;
+  color: white;
+}
+.esl-testimonial-slides {
+  height: 220px;
+}
+.esl-testimonial-body-compony-logo {
+  text-align: right;
+  font-family: RotisSemiSansStd, serif !important;
+  line-height: 1.6;
+  word-spacing: .5px;
+  font-size: 16px;
+  width: 100%;
+}
+.esl-testimonial-body-compony-logo div a {
+  color: white;
+  font-family: RotisSemiSansStd, serif !important
+}
+.esl-testimonial-body-footer {
+  margin-left: 100px;
+}
+.esl-testimonial-slider-buttons {
+  margin-top: 10px;
+}
+
+#esl-signup-error-message, #esl-signin-error-message {
+  font-size: 14px;
+}
+#esl-forgot-password-error-message {
+  font-size: 14px;
+}
+
+.esl-testimonial-slides > div {
+  width: 100%;
+}
+
+@media screen and (min-width : 320px) {
+  .esl-container {
+    width: 300px;
+    min-width: 280px;
+    max-width: 320px;
+    height: 640px;
+    flex-direction: column;
+
+    .esl-auth-right-container-overlay, .esl-auth-left-container-overlay {
+      padding: 0 .5rem;
+    }
+  }
+  .esl-auth-left-container {
+    width: 100%;
+    height: 320px;
+    position: relative;
+  }
+
+  .esl-auth-left-container.esl-auth-left-container-updated {
+    width: 100%
+  }
+
+  .esl-auth-right-container {
+    width: 100%;
+    height: 420px;
+    position: relative;
+  }
+
+  .esl-auth-right-container.esl-auth-right-container-updated {
+    width: 100%
+  }
+
+  .esl-testimonial-slider {
+    min-width: 300px;
+    max-width: 300px;
+    display: block;
+    margin: 15px auto 0;
+    height: 400px;
+
+    .esl-testimonial-slides {
+      height: 340px;
+
+      .esl-testimonial-quote-svg {
+        overflow: visible;
+        margin-left: 20px;
+      }
+
+      .esl-testimonial-body {
+        margin-left: 10px;
+      }
+
+      .esl-testimonial-body-compony-logo {
+        min-width: 100px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width : 768px) {
+  .esl-container {
+    width: 400px;
+    min-width: 380px;
+    max-width: 420px;
+    height: 545px;
+    flex-direction: column;
+  }
+
+  .esl-testimonial-slider {
+    min-width: 400px;
+    max-width: 400px;
+    display: block;
+    margin: 15px auto 0;
+
+    .esl-testimonial-slides {
+
+      .esl-testimonial-quote-svg {
+        overflow: hidden;
+        margin-left: 40px;
+      }
+
+      .esl-testimonial-body {
+        margin-left: 31px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width : 993px) {
+  .esl-container {
+    width: 430px;
+    min-width: 400px;
+    max-width: 440px;
+    height: 345px;
+    flex-direction: row;
+
+    .esl-auth-right-container-overlay, .esl-auth-left-container-overlay {
+      padding: initial;
+    }
+  }
+  .esl-auth-left-container {
+    width: 60%;
+    height: auto;
+  }
+
+  .esl-auth-left-container.esl-auth-left-container-updated {
+    width: 40%
+  }
+
+  .esl-auth-right-container {
+    width: 40%;
+    height: auto;
+  }
+
+  .esl-auth-right-container.esl-auth-right-container-updated {
+    width: 60%
+  }
+
+  .esl-testimonial-slider {
+    min-width: 430px;
+    max-width: 430px;
+    display: block;
+    margin: 15px auto 0;
+  }
+}
+
+
+/* Desktops and laptops ----------- */
+@media screen and (min-width : 1124px) {
+  .esl-container {
+    width: 450px;
+    min-width: 430px;
+    max-width: 450px;
+  }
+
+  .esl-testimonial-slider {
+    min-width: 450px;
+    max-width: 450px;
+    display: block;
+    margin: 15px auto 0;
+    height: 285px;
+
+    .esl-testimonial-slides {
+      height: 220px;
+    }
+  }
+}
+
+
+/* Desktops and laptops ----------- */
+@media screen and (min-width : 1224px) {
+  .esl-container {
+    width: 530px;
+    min-width: 500px;
+    max-width: 530px;
+  }
+
+  .esl-testimonial-slider {
+    max-width: 530px;
+    min-width: 530px;
+    display: block;
+    margin: 15px auto 0;
+  }
+}
+
+/* Desktops and laptops ----------- */
+@media screen and (min-width : 1300px) {
+  .esl-container {
+    width: 530px;
+    min-width: 500px;
+    max-width: 530px;
+    height: 345px;
+  }
+
+  .esl-testimonial-slider {
+    max-width: 530px;
+    min-width: 530px;
+    display: block;
+    margin: 15px auto 0;
+  }
+}
+
+#esl-register-email,#esl-login-email, #esl-password{
+  transition: border-left 0.3s;
+}
+#esl-login-email:focus, #esl-password:focus{
+  border-left: 8px solid #941100 !important;
+}
+#esl-register-email:focus{
+  border-left: 8px solid #941100 !important;
+}
+.mobile-app-wrapper{
+  display: grid;
+  grid-template-columns: 40% 40%;
+  grid-column-gap: 20px;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  margin-top: 8px;
+  align-items: baseline;
+}
+.mobile-app-wrapper.mobile{
+  grid-template-columns: 120px 120px;
+  margin-bottom: 0px;
+  margin-top: 25px;
+  justify-content: center;
+}
+.mobile-app-wrapper img{
+  width : 100%;
+}
+.mobile-app-wrapper img.disabled, .mobile-app-wrapper svg.disabled{
+  opacity: 0.5;
+}
+
+.coming-soon-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.coming-soon-tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 50px;
+}
+
+.coming-soon-tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+.signup-separator{
+  text-align: center;
+  cursor: auto;
+  margin-bottom: 10px;
+}
+.pt-2{
+  padding-top: 0px;
+}

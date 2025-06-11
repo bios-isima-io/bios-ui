@@ -1,0 +1,16 @@
+@import "app/styles/imports";
+.fill-red {
+  fill: $isima-red-btn-color;
+}
+
+.full-logo {
+  width: 250px;
+  position: relative;
+
+  img {
+    height: 50px;
+    left: 0;
+    top: 0;
+    position: absolute;
+  }
+}

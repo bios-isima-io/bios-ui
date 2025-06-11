@@ -1,0 +1,20 @@
+.mobile-dropdown {
+  padding: 15px 20px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #4f4f4f;
+  color: white;
+  .icon-chevron-down {
+    margin-top: 4px;
+    color: white;
+  }
+  .icon-chevron-down::before {
+    color: white;
+  }
+  .icon-rotate {
+    transform: rotateX(180deg);
+    position: relative;
+    top: -4px;
+  }
+}

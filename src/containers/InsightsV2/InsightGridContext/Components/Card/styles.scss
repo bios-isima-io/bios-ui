@@ -1,0 +1,192 @@
+@keyframes nudge {
+  0% {
+    transform: rotate(-4deg);
+  }
+  
+  33% {
+    transform: rotate(5deg);
+  }
+  
+  66% {
+    transform: rotate(-4deg);
+  }
+}
+
+
+.row-card {
+  min-width: 220px;
+  height: 260px;
+  margin-right: 24px;
+  margin-left: 8px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  font-family: Poppins;
+
+  &:hover {
+    animation: nudge .4s linear;
+  }
+
+  .card-icon-close {
+    position: relative;
+  }
+
+  .icon-close {
+    position: absolute;
+    left: 80px;
+    top: 14px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .icon-close:hover:before {
+    color: white;
+  }
+
+  .card-title {
+    margin-top: 26px;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    width: 150px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #3e3e3c;
+  }
+
+  .card-updated-at {
+    margin-top: 8px;
+    font-weight: 300;
+    font-size: 10px;
+    color: #3e3e3c;
+  }
+
+  .card-mini-graph {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 25px;
+  }
+
+  .card-change {
+    font-weight: 300;
+    font-size: 10px;
+  }
+
+  .card-indicator {
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 20px;
+    font-family: Helvetica;
+  }
+
+  .card-fav {
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 10px;
+  }
+
+  .icon-fav:before {
+    color: black;
+    font-size: 13px;
+  }
+
+  .icon-fav:hover {
+    cursor: pointer;
+  }
+
+  .icon-fav-border-only.icon-fav:before {
+    color: lightgray;
+    font-size: 13px;
+  }
+
+  .graph-loader {
+    width: 80px;
+    height: 60px;
+  }
+
+  .icon-filter {
+    font-size: 16px;
+  }
+
+  .card-filter {
+    height: 12px;
+    margin-top: 18px;
+  }
+}
+
+.row-card:hover {
+  background-color: #393939;
+  .card-title {
+    color: white;
+  }
+  .card-updated-at {
+    color: white;
+  }
+  .icon-fav:before {
+    color: white;
+  }
+  .card-indicator {
+    color: white;
+  }
+  .icon-filter {
+    color: white;
+  }
+  .card-mini-graph {
+    path {
+      stroke: white;
+    }
+  }
+}
+
+.card-red-border {
+  position: relative;
+}
+
+.card-red-border::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 4px;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(45deg, #ea0707, #efa1a1);
+  border-image-width: 0 0 8px 0;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+
+.card-grey-border {
+  border-bottom: 8px solid #b7b7b7;
+}
+
+.card-green-border {
+  position: relative;
+}
+
+.card-green-border::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 4px;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(45deg, #04ad70, #02f49e);
+  border-image-width: 0 0 8px 0;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+
+
+.all-report-card {
+  background-color: #f6f6f6;
+}

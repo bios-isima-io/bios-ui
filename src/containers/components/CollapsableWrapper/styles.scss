@@ -1,0 +1,48 @@
+
+  .collapsable-wrapper {
+		background: none !important;
+    border-radius: 2px;
+    margin-top: 40px;
+    margin-bottom: 24px;
+    border: 0px;
+
+    .ant-collapse-header {
+
+      background-color: #FFFFFF;
+      border-radius: 6px;
+      font-weight: 400;
+			padding: 16px 20px !important;
+			box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
+
+			svg {
+        float: right;
+        right: -3px;
+        position: relative;
+      }
+    }
+
+    .ant-collapse-item {
+      margin-bottom: 30px;
+    }
+
+		.collapse-panel {
+			border-bottom: none !important;
+		}
+
+		.rotate_panel_toggle {
+			transform: rotate(45);
+		}
+
+		.ant-collapse-content-box {
+			padding: 0 !important;
+			margin: 0;
+		 }
+		 .advance-setting-close {
+			margin-top: 10px;
+			margin-right: 20px;
+		}
+
+		.advance-setting-close:hover {
+			cursor: pointer;
+		}
+  }

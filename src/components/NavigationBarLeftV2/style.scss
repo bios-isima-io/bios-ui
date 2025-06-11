@@ -1,0 +1,325 @@
+@import "app/styles/imports";
+@import "app/styles/variable";
+
+$nav-background:#F5F6F7;
+$nav-link-text: #706E6B;
+$nav-link-active: #941100;
+$nav-link-active-bg: #fff;
+$nav-link-hover: #941100;
+$nav-link-border: #E0E0E0;
+$user-profile-stroke: #E0E0E0;
+$transition-logo-nav-resize: width 0.4s ease, height 0.8s ease;
+
+.left-nav {
+  .mobile-hemburger-trigger{
+    font-size: 20px;
+		cursor: pointer;
+		width: 100%;
+		//background-color: $nav-background; //Disabling because it's hiding signal/context actions
+		position: relative;
+
+		.icon-menu {
+			position: absolute;
+			top: 38px;
+			left: 20px;
+			z-index: 1;
+		}
+  }
+  .top-navigation-wrapper{
+    display: block;
+    overflow-y: auto;
+    height: calc(100% - 180px);
+  }
+
+  .mobile-close-trigger{
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    font-size: 20px;
+    padding: 4px 6px;
+    cursor: pointer;
+  }
+
+  @keyframes close-profile-button-keyframe {
+    from {opacity: 10%}
+    to {opacity: 100%}
+  }
+
+  @keyframes nav-text-keyframe {
+    from {opacity: 0%}
+    to {opacity: 100%}
+  }
+
+  @keyframes user-profile-settings-keyframe {
+    from {opacity: 0%}
+    to { opacity: 100%}
+  }
+
+  @mixin sidemenu-nav-default {
+    position: fixed;
+    background:$nav-background;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    font-size: 0.81rem;
+    height: 100vh;
+  }
+
+  @mixin nav-collapse-default {
+    position: absolute;
+    top: 60%;
+    background-color: transparent;
+    color: $nav-link-text;
+    border: none;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+
+    svg {
+      width: 2.37rem;
+      height: 2.37rem;
+    }
+
+  }
+
+  .side-menu-container {
+
+    .nav-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 118px;
+      border-bottom: 1px solid $nav-link-border;
+      @media (max-width: $isima-large-device-breakpoint){
+        height: 100px;
+      }
+    }
+
+    .nav-section {
+      border-bottom: 1px solid $nav-link-border;
+    }
+
+    .nav-item-button {
+      display: flex;
+      align-items: center;
+      padding-top:0.93rem;
+      padding-bottom: 0.93rem;
+			width: 100%;
+			padding:17px 21px;
+      text-align: left;
+      background-color: $nav-background;
+      color: $nav-link-text;
+      border: none;
+      @media (max-width: $isima-large-device-breakpoint){
+        margin:0px 30px;
+        width: calc(100% - 60px);
+      }
+
+      &:hover {
+        color: $nav-link-hover;
+        cursor: pointer;
+
+        .nav-icon path[fill]{
+          fill: $nav-link-hover;
+        }
+
+        .nav-icon path[stroke]{
+          stroke: $nav-link-hover;
+				}
+				
+				.icon-integration:before {
+					color: $nav-link-active !important;
+				}
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      .nav-icon {
+        padding-left: 2px;
+        padding-right: 1.25rem;
+        height: 24px;
+      }
+    }
+
+    .nav-text {
+      animation: nav-text-keyframe 0.25s;
+    }
+
+    .nav-item {
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .nav-item-link {
+      overflow: hidden;
+      white-space: nowrap;
+      padding-top:0.93rem;
+      padding-bottom: 0.93rem;
+      display: flex;
+      align-items: center;
+      color: $nav-link-text;
+      padding:17px 14px;
+      @media (max-width: $isima-large-device-breakpoint){
+        margin:0px 30px;
+        width: calc(100% - 60px);
+      }
+
+      .nav-icon {
+        padding-left: 0.6275rem;
+        padding-right: 1.25rem;
+        height: 24px;
+        max-width: 54px;
+      }
+
+      &:hover {
+        color: $nav-link-hover;
+
+        .nav-icon path[stroke] {
+          stroke: $nav-link-hover
+        }
+
+        .nav-icon path[fill]{
+          fill: $nav-link-hover;
+				}
+
+				.icon-integration:before {
+					color: $nav-link-active !important;
+				}
+      }
+		}
+
+    .nav-item-active {
+      color: $nav-link-active;
+      padding:17px 14px;
+      font-weight: bold;
+			background-color: $nav-link-active-bg;
+			.icon-integration:before {
+				color: $nav-link-active !important;
+			}
+      @media (max-width: $isima-large-device-breakpoint){
+        padding:17px 44px;
+        width: 100%;
+        margin-left: 0px;
+      }
+
+      .nav-icon path[stroke] {
+        stroke: $nav-link-active;
+      }
+
+      .nav-icon path[fill]{
+        fill: $nav-link-active;
+      }
+    }
+
+    .bottom-nav {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      border-bottom: none;
+
+      .user-profile {
+				background: #F5F6F7;
+				
+				.nav-icon {
+					position: relative;
+					left: -3px;
+				}
+
+        .nav-icon path[stroke] {
+          stroke: $user-profile-stroke
+        }
+
+        .nav-icon path[fill]{
+          fill: $user-profile-stroke;
+        }
+      }
+
+      .user-profile-settings {
+        padding-left: 2.7rem;
+        border-top: 1px solid $nav-link-border;
+        margin-top: 0.625rem;
+        animation-name: user-profile-settings-keyframe;
+        animation-duration: 0.75s;
+      }
+
+      .close-profile-settings-icon {
+        position: relative;
+        padding : 0;
+        margin-top : 3px;
+        left: 0%;
+        top: -0.625rem;
+        border: none;
+        background-color: transparent;
+        animation-name: close-profile-button-keyframe;
+        animation-duration: 0.75s;
+
+        &:focus {
+          outline: none;
+        }
+
+        &:hover {
+          cursor: pointer;
+
+          path {
+            stroke: $nav-link-active;
+          }
+        }
+      }
+    }
+
+    .sidenav-section-separator {
+      border: none;
+      border-bottom: 1px solid $nav-link-border;
+    }
+
+    .full-menu-collapsed {
+        @include sidemenu-nav-default();
+        width: 77px;
+        transition: width 0.75s ease-out;
+
+        .nav-collapse {
+          @include nav-collapse-default();
+          left:2.9rem;
+          transition: 0.75s ease-out;
+        }
+
+        .nav-header {
+
+          svg {
+            width:2.81rem;
+            height:1.12rem;
+            transition: $transition-logo-nav-resize;
+          }
+        }
+
+    }
+
+    .full-menu {
+      @include sidemenu-nav-default();
+      // animation-name: sizenav-expand-keyframe;
+      animation-duration: 0.75s;
+      width: 12rem;
+      z-index: 10000;
+
+      .nav-collapse {
+        @include nav-collapse-default();
+        left:10.8rem;
+        // animation-name: sizenav-expand-button-keyframe;
+        animation-duration: 0.75s;
+      }
+
+      .nav-header {
+
+        svg {
+          transition: $transition-logo-nav-resize;
+        }
+      }
+    }
+
+  }
+
+}

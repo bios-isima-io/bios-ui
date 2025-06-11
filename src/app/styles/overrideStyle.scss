@@ -1,0 +1,58 @@
+@import "app/styles/variable";
+
+//File upload
+.ant-upload-list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+//Radio Button
+.ant-radio-wrapper{
+  font-size: 12px;
+  @media (min-width: $isima-large-device-breakpoint){
+    font-size: 12px;
+  }
+}
+
+//Toggle switch
+.ant-switch{
+  width : 43px;
+  min-width: 43px;
+}
+
+//Get rid of clicked (glow fade-out) animation for antd button
+[ant-click-animating-without-extra-node]:after {
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  -o-animation: none !important;
+  -ms-animation: none !important;
+  animation: none !important;
+}
+
+
+//highchart
+.highcharts-credits{
+  display: none !important;
+}
+
+//Multi-select dropdown
+.multi-select {
+  .dropdown {
+    background: white;
+    border-radius: 5px;
+    border: 1px solid #bbb;
+  }
+
+  .dropdown-heading {
+    cursor: pointer !important;
+  }
+  .dropdown-content{
+    width: 100% !important;
+  }
+}
+
+//Tooltip
+.ant-tooltip-arrow-content{
+  background-color: rgba(0,0,0,1) !important;
+}

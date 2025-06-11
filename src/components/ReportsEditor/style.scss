@@ -1,0 +1,42 @@
+@import "app/styles/imports";
+
+.ant-popover-arrow {
+  display: none !important;
+}
+
+.ant-popover-inner {
+  background-color: $white !important;
+  border-radius: 10px !important;
+
+  .ant-popover-inner-content {
+    padding: 0;
+
+    .attribute-adder {
+      .ant-divider.ant-divider-horizontal {
+        margin: .5rem 0;
+      }
+      .ant-row {
+        padding: .5rem 1.5rem;
+
+        .ant-input, .ant-input-number {
+          width: 9rem;
+          margin-left: .6rem;
+
+          &.full-width {
+            width: 100%;
+            margin: 0;
+          }
+        }
+
+        &:first-child {
+          padding-top: 2rem;
+        }
+
+        &.controls {
+          padding-bottom: 2rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

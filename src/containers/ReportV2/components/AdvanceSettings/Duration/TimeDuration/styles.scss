@@ -1,0 +1,125 @@
+@import "app/styles/variable";
+$radio-btn-bg-color : #FFFFFF;
+$radio-btn-border-color : #DDDBDA;
+$radio-btn-checked-text-color : white;
+$radio-btn-checked-bg-color :  #393939;
+$radio-btn-checked-border-color : black;
+$radio-btn-checked-icon-color:white;
+
+.time-duration-container {
+	margin-top: 26px;
+	margin-bottom: 10px;
+	padding-left: 20px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #A6A6A6;
+	.header {
+		display: flex;
+
+		.icon-refreshed {
+			font-size: 20px;
+			margin-left: 30px;
+			cursor: pointer;
+		}
+
+		.disabled.icon-refreshed:before {
+			font-size: 20px;
+			color: lightgray;
+			cursor: not-allowed;
+		}
+	}
+	.header-text {
+		font-size: 12px;
+	}
+
+	.duration-display {
+		font-size: 12px;
+		font-style: italic;
+		font-weight: 400;
+		color: #6D6B6B;
+		margin-top: 11px;
+	}
+}
+
+
+.report-graph-time-duration {
+	margin-top: 20px;
+  position: relative;
+	.ant-radio-button-wrapper {
+		margin-left: 4px;
+		margin-right: 4px;
+		padding-left: 4px;
+		padding-right: 4px;
+		border-radius: 5px;
+		line-height: 1.75rem;
+		height: 1.75rem;
+		background-color: $radio-btn-bg-color;
+		border: none;
+		font-size: 11px;
+		width: 2.5rem;
+		text-align: center;
+
+		&::before {
+			display: none !important;
+		}
+		&:first-child {
+			margin-left: 0px;
+			border-radius: 5px;
+		}
+		&:last-child {
+			margin-right: 0px;
+			border-radius: 5px;
+		}
+	}
+
+	.ant-radio-button-wrapper-checked {
+		color: $radio-btn-checked-text-color !important;
+		background: $radio-btn-checked-bg-color !important;
+		box-shadow: none !important;
+		font-weight: 700;
+		.icon-Settings:before {
+			color: $radio-btn-checked-icon-color !important;
+			background: $radio-btn-checked-bg-color !important;
+		}
+	}
+
+	.ant-radio-button-wrapper-unchecked {
+		background: unset;
+		box-shadow: unset;
+		border: 1px solid transparent !important;
+		
+	}
+
+	.not-selected-radio {
+		background: unset !important;
+		box-shadow: unset !important;
+		border: 1px solid transparent !important;
+		font-weight: 400;
+	}
+}
+
+.time-range-date-picker {
+	width: 0px;
+	visibility: hidden;
+	position: absolute;
+}
+
+.timerange-popup {
+	width: 374px;
+	.ant-popover-inner-content {
+		padding: 0px;
+	}
+}
+
+@media only screen and (max-width: $isima-large-device-breakpoint) {
+	.timerange-popup {
+		top: 0px !important;
+		left: 0px !important;
+		z-index: 10000;
+	}
+	
+	.timerange-popup.ant-popover-placement-bottom, 
+	.timerange-popup.ant-popover-placement-bottomLeft, 
+	.timerange-popup.ant-popover-placement-bottomRight {
+		padding-top: 0px !important;
+	}
+}

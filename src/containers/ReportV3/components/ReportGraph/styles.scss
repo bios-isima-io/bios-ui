@@ -1,0 +1,33 @@
+@import 'app/styles/variable';
+
+.report-graph-container {
+  position: relative;
+  width: 100%;
+  @media (min-width: $isima-large-device-breakpoint) {
+    width: calc(100% + 40px);
+    left: -23px;
+    margin-top: 40px;
+  }
+}
+
+.report-graph-container-arrow {
+  visibility: hidden;
+  background-color: darkgrey;
+  width: 50px;
+  height: 55px;
+  border-radius: 35px;
+  text-align: center;
+  padding-top: 10px;
+  padding-right: 5px;
+  opacity: 0.5;
+  cursor: pointer;
+  z-index: 100;
+  @media (max-width: $isima-large-device-breakpoint) {
+    width: 40px;
+    height: 45px;
+    border-radius: 25px;
+  }
+}
+.report-graph-container:hover .report-graph-container-arrow {
+  visibility: visible;
+}

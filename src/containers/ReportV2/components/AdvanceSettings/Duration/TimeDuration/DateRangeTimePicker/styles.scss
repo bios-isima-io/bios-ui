@@ -1,0 +1,121 @@
+.date-range-picker-container {
+	background-color: white;
+	height: 400px;
+	position: relative;
+
+	.date-picker-header {
+		display: flex;
+		flex-direction: row;
+
+		.header-start, .header-end {
+			width: 50%;
+			display: flex;
+			justify-content: center;
+			padding-top: 20px;
+			padding-bottom: 12px;
+			border-bottom: 1px solid #B0ADAB;
+			cursor: pointer;
+		}
+
+		.show-active-border {
+			border-bottom: 3px solid #2B2826;
+		}
+	}
+
+	.custom-daterange-picker {
+		visibility: hidden;
+	}
+
+	.custom-calendar-dropdown {
+		position: absolute !important;
+		top : 56px !important;
+		left: 0px !important;
+		width: 100%;
+	}
+
+	.ant-picker-panel-container {
+		position: relative;
+		.ant-picker-month-btn:hover {
+			color: #000;
+		}
+		.ant-picker-year-btn:hover {
+			color: #000;
+		}
+		.ant-picker-decade-btn:hover {
+			color: #000;
+		}
+	}
+
+	.ant-picker-panel {
+		width: calc(100% - 5px);
+		.ant-picker-date-panel {
+			width: 100%;
+
+			.ant-picker-content {
+				width: 100%;
+			}
+		}
+
+		.ant-picker-month-panel {
+			width: 100%;
+			.ant-picker-header {
+				width: 100%;
+			}
+		}
+
+		.ant-picker-year-panel {
+			width: 100%;
+			.ant-picker-header {
+				width: 100%;
+			}
+		}
+
+		.ant-picker-decade-panel {
+			width: 100%;
+			.ant-picker-header {
+				width: 100%;
+			}
+		}
+	}
+
+	.time-picker-container {
+		display: flex;
+		justify-content: center;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		border-bottom: 0.5px solid #B0ADAB;
+
+
+		.ant-picker-time-panel {
+			.ant-picker-content {
+				.ant-picker-time-panel-column:nth-child(3){
+					overflow-y: unset !important;
+				}
+			}
+		}
+	}
+
+	.time-picker-action-button {
+		display: flex;
+		margin: 10px;
+		justify-content: flex-end;
+
+		.ant-btn:hover {
+			border-color: #E0E0E0 !important;
+			color: #000;
+		}
+	}
+
+
+	.ant-picker-cell-selected {
+		.ant-picker-cell-inner {
+			background-color: #2B2826 !important;
+		}
+	}
+
+	.ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner::before {
+			border-color: #fff !important;
+	}
+
+
+}	

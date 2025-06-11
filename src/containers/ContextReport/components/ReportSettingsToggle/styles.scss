@@ -1,0 +1,28 @@
+$button-text: #000;
+$button-text-active: #fff;
+$button-background-active: #949494;
+
+.modify-toggle-button-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  > .ant-btn {
+    margin-left: 12px;
+    width: 50%;
+  }
+  > .ant-btn:first-child {
+    margin-left: 0px;
+  }
+  button:hover {
+    background-color: $button-background-active !important;
+    color: $button-text-active;
+    border-color: $button-background-active;
+  }
+
+  .title {
+    margin-top: 8px;
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}

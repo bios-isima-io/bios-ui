@@ -1,0 +1,56 @@
+@import 'app/styles/variable';
+
+.page-wrapper {
+  background-color: white !important;
+}
+
+.insights-page-container {
+  padding-bottom: 100px;
+  margin-bottom: 20px;
+  background-color: white;
+  .signal-title {
+    font-size: 14px;
+    margin-bottom: 15px;
+    margin-top: 42px;
+    cursor: pointer;
+
+    @media only screen and (max-width: $isima-large-device-breakpoint) {
+      margin-top: 34px;
+    }
+    .active {
+      font-weight: 600;
+    }
+  }
+
+  .context-multi-select-container,
+  .signal-multi-select-container {
+    border-top-left-radius: 0px;
+  }
+
+  .ant-tabs-nav {
+    margin-bottom: 0px;
+  }
+  .ant-tabs-tab {
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  }
+  .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: black;
+  }
+  .ant-tabs-tab-btn:hover {
+    color: black;
+  }
+  .ant-tabs-content-holder {
+    padding-bottom: 5px;
+  }
+  .ant-tabs-nav-wrap {
+    padding-left: 5px;
+  }
+}
+
+@media only screen and (max-width: $isima-large-device-breakpoint) {
+  .insights-page-container {
+    min-width: 0;
+    width: 100%;
+    padding: 0;
+  }
+}

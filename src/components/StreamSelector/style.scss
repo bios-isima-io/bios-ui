@@ -1,0 +1,54 @@
+@import "app/styles/imports";
+
+.ant-popover-arrow {
+  display: none !important;
+  border: none !important;
+}
+
+.ant-popover-inner {
+ background-color: $white !important;
+  border-radius: 10px !important;
+
+  .ant-popover-inner-content {
+    padding: 0;
+
+    .signal-select {
+      overflow-y: scroll;
+      overflow-x: hidden;
+      min-height: 0;
+      max-height: 400px;
+
+      .signal-select-title {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid rgba($isima-grey-1, .4);
+      }
+
+      .filter-input {
+        padding: .5rem 1.5rem;
+        border-bottom: 1px solid $isima-grey-2;
+      }
+
+      .signal-select-item {
+        padding: .6rem 1.5rem .3rem;
+        border-bottom: 1px solid rgba($isima-grey-1, .4);
+        cursor: pointer;
+
+        &:last-child {
+          border: none;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          &:hover {
+            background-color: $white;
+          }
+        }
+
+        &:hover {
+          background-color: rgba($isima-grey-1, .5);
+        }
+      }
+    }
+  }
+}
+

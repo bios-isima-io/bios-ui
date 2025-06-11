@@ -1,0 +1,17 @@
+.advance-settings {
+	margin-top: 70px;
+  >.header {
+    display: flex;
+		justify-content: space-between;
+		margin-bottom: 30px;
+  }
+  .title {
+    font-weight: 400;
+    font-size: 24px;
+	}
+
+	.icon-close {
+		font-size: 30px;
+		cursor: pointer;
+	}
+}

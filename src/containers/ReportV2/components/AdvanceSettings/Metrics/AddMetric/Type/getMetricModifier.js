@@ -1,0 +1,439 @@
+/*
+ * Copyright (C) 2025 Isima, Inc.
+ *
+ * # PolyForm Free Trial License 1.0.0
+ *
+ * <https://polyformproject.org/licenses/free-trial/1.0.0>
+ *
+ * ## Acceptance
+ *
+ * In order to get any license under these terms, you must agree
+ * to them as both strict obligations and conditions to all
+ * your licenses.
+ *
+ * ## Copyright License
+ *
+ * The licensor grants you a copyright license for the software
+ * to do everything you might do with the software that would
+ * otherwise infringe the licensor's copyright in it for any
+ * permitted purpose.  However, you may only make changes or
+ * new works based on the software according to [Changes and New
+ * Works License](#changes-and-new-works-license), and you may
+ * not distribute copies of the software.
+ *
+ * ## Changes and New Works License
+ *
+ * The licensor grants you an additional copyright license to
+ * make changes and new works based on the software for any
+ * permitted purpose.
+ *
+ * ## Patent License
+ *
+ * The licensor grants you a patent license for the software that
+ * covers patent claims the licensor can license, or becomes able
+ * to license, that you would infringe by using the software.
+ *
+ * ## Fair Use
+ *
+ * You may have "fair use" rights for the software under the
+ * law. These terms do not limit them.
+ *
+ * ## Free Trial
+ *
+ * Use to evaluate whether the software suits a particular
+ * application for less than 32 consecutive calendar days, on
+ * behalf of you or your company, is use for a permitted purpose.
+ *
+ * ## No Other Rights
+ *
+ * These terms do not allow you to sublicense or transfer any of
+ * your licenses to anyone else, or prevent the licensor from
+ * granting licenses to anyone else.  These terms do not imply
+ * any other licenses.
+ *
+ * ## Patent Defense
+ *
+ * If you make any written claim that the software infringes or
+ * contributes to infringement of any patent, your patent license
+ * for the software granted under these terms ends immediately. If
+ * your company makes such a claim, your patent license ends
+ * immediately for work on behalf of your company.
+ *
+ * ## Violations
+ *
+ * If you violate any of these terms, or do anything with the
+ * software not covered by your licenses, all your licenses
+ * end immediately.
+ *
+ * ## No Liability
+ *
+ * ***As far as the law allows, the software comes as is, without
+ * any warranty or condition, and the licensor will not be liable
+ * to you for any damages arising out of these terms or the use
+ * or nature of the software, under any kind of legal claim.***
+ *
+ * ## Definitions
+ *
+ * The **licensor** is the individual or entity offering these
+ * terms, and the **software** is the software the licensor makes
+ * available under these terms.
+ *
+ * **You** refers to the individual or entity agreeing to these
+ * terms.
+ *
+ * **Your company** is any legal entity, sole proprietorship,
+ * or other kind of organization that you work for, plus all
+ * organizations that have control over, are under the control of,
+ * or are under common control with that organization.  **Control**
+ * means ownership of substantially all the assets of an entity,
+ * or the power to direct its management and policies by vote,
+ * contract, or otherwise.  Control can be direct or indirect.
+ *
+ * **Your licenses** are all the licenses granted to you for the
+ * software under these terms.
+ *
+ * **Use** means anything you do with the software requiring one
+ * of your licenses.
+ */
+import { measurementToArray } from 'utils/metrics';
+import { DERIVED_METRIC_CUSTOM_VARIABLES } from './Derived/const';
+
+const buildDivideTag = ({ metricItem, unitDisplayPosition }) => {
+  let tagValue = {};
+  let validTag = false;
+
+  if (/[a-zA-Z.# ]*( *)\/( *)[a-zA-Z.# ]*$/g.test(metricItem.trim())) {
+    const values = metricItem
+      .trim()
+      .split('/')
+      .map((item) => item.trim());
+    if (values.length === 2) {
+      if (values[0] === values[1]) {
+        tagValue = {
+          unitDisplayName: values[0] === 'count' ? '#' : values[0],
+          unitDisplayPosition,
+        };
+        validTag = true;
+      }
+      if (values[1] === 'count') {
+        tagValue = {
+          unitDisplayName: values[0] === 'count' ? '#' : values[0],
+          unitDisplayPosition,
+        };
+        validTag = true;
+      }
+    }
+  }
+  return {
+    validTag,
+    tagValue,
+  };
+};
+
+function buildNode(n, parent, direction) {
+  let leftTree = null;
+  let rightTree = null;
+
+  if (!Array.isArray(n?.args)) {
+    return n;
+  }
+
+  if (n.args[0]) {
+    leftTree = buildNode(n.args[0], n, 'left');
+  }
+  if (n.args[1]) {
+    rightTree = buildNode(n.args[1], n, 'right');
+  }
+
+  if (n.type === 'SymbolNode' || n.type === 'ConstantNode') {
+    return n;
+  }
+
+  if (n.type === 'OperatorNode') {
+    if (
+      leftTree?.type === 'ConstantNode' &&
+      rightTree?.type === 'ConstantNode' &&
+      parent
+    ) {
+      if (direction === 'left') {
+        parent.args[0] = null;
+      } else {
+        parent.args[1] = null;
+      }
+      return null;
+    }
+
+    if (leftTree?.type === 'SymbolNode' && rightTree?.type === 'ConstantNode') {
+      if (direction === 'left') {
+        if (parent?.args?.[0]) {
+          parent.args[0] = leftTree;
+        }
+      } else {
+        if (parent?.args?.[1]) {
+          parent.args[1] = leftTree;
+        }
+      }
+      return new window.math.SymbolNode(leftTree.name);
+    }
+
+    if (leftTree?.type === 'ConstantNode' && rightTree?.type === 'SymbolNode') {
+      if (direction === 'left') {
+        if (parent?.args?.[0]) {
+          parent.args[0] = rightTree;
+        }
+      } else {
+        if (parent?.args?.[1]) {
+          parent.args[1] = rightTree;
+        }
+      }
+      return new window.math.SymbolNode(rightTree.name);
+    }
+
+    if (leftTree?.type === 'SymbolNode' && rightTree?.type === 'SymbolNode') {
+      return new window.math.OperatorNode(n.op, n.fn, [leftTree, rightTree]);
+    }
+
+    if (
+      leftTree?.type === 'OperatorNode' &&
+      rightTree?.type === 'ConstantNode'
+    ) {
+      if (direction === 'left') {
+        if (parent?.args?.[0]) {
+          parent.args[0] = leftTree;
+        }
+      } else {
+        if (parent?.args?.[1]) {
+          parent.args[1] = leftTree;
+        }
+      }
+      return leftTree;
+    }
+    if (
+      leftTree?.type === 'ConstantNode' &&
+      rightTree?.type === 'OperatorNode'
+    ) {
+      if (direction === 'left') {
+        if (parent?.args?.[0]) {
+          parent.args[0] = rightTree;
+        }
+      } else {
+        if (parent?.args?.[1]) {
+          parent.args[1] = rightTree;
+        }
+      }
+      return rightTree;
+    }
+  }
+  return n;
+}
+
+const getSigMetricAtt = (measurement) => {
+  try {
+    const [signalName, val] = measurement?.split('.');
+    const [metric, attribute] = val?.slice(0, -1)?.split('(');
+
+    return { signalName, metric, attribute };
+  } catch {
+    return { signalName: '', metric: '', attribute: '' };
+  }
+};
+
+const buildUnitModifierMap = (modifiers) => {
+  return modifiers?.reduce((acc, mod) => {
+    acc[mod.metricFunction] = mod.unitModifier;
+    return acc;
+  }, {});
+};
+
+const getPowerValue = (tag, modifier) => {
+  if (tag === '') {
+    return tag;
+  }
+  switch (modifier) {
+    case 'Squared':
+      tag = tag + ' <sup>2</sup>';
+      break;
+    case 'Cubed':
+      tag = tag + ' <sup>3</sup>';
+      break;
+    case 'FourthPower':
+      tag = tag + ' <sup>4</sup>';
+      break;
+    default:
+      break;
+  }
+  return tag;
+};
+
+const buildTagValue = ({
+  signalName,
+  metric,
+  attribute,
+  selectedSignals,
+  modifiers,
+}) => {
+  const unitModifierMap = buildUnitModifierMap(modifiers);
+  const signal = selectedSignals.filter((sig) => sig.signalName === signalName);
+  let unitDisplayName = '';
+  let unitDisplayPosition = '';
+  if (signal && signal.length === 1) {
+    const att = signal?.[0]?.attributes?.find(
+      (att) => att?.attributeName === attribute,
+    );
+    if (
+      att &&
+      att.tags &&
+      att.tags.unitDisplayName &&
+      att.tags.unitDisplayName !== ''
+    ) {
+      unitDisplayName = att.tags.unitDisplayName;
+    }
+    if (
+      unitDisplayName === '' &&
+      att &&
+      att.tags &&
+      att.tags.unit &&
+      att.tags.unit === 'Count'
+    ) {
+      unitDisplayPosition = 'Prefix';
+      unitDisplayName = '#';
+    }
+    if (
+      att &&
+      att.tags &&
+      att.tags.unitDisplayPosition &&
+      att.tags.unitDisplayPosition !== ''
+    ) {
+      unitDisplayPosition = att.tags.unitDisplayPosition;
+    }
+  }
+  const metricUpperCase = metric?.toUpperCase();
+  if (unitModifierMap?.[metricUpperCase]) {
+    if (
+      unitDisplayName === '' &&
+      unitModifierMap[metricUpperCase] === 'Dimensionless'
+    ) {
+      unitDisplayName = '#';
+      unitDisplayPosition = 'Prefix';
+    }
+    unitDisplayName = getPowerValue(
+      unitDisplayName,
+      unitModifierMap[metricUpperCase],
+    );
+  }
+
+  return { unitDisplayName, unitDisplayPosition };
+};
+
+const getSimpleMetricModifier = (selectedSignals, metricItem, modifiers) => {
+  const { signalName, metric, attribute } = getSigMetricAtt(metricItem);
+  const { unitDisplayName, unitDisplayPosition } = buildTagValue({
+    signalName,
+    metric,
+    attribute,
+    selectedSignals,
+    modifiers,
+  });
+  return { unitDisplayName, unitDisplayPosition };
+};
+
+const getDerivedMetricModifier = (selectedSignals, metricItem, modifiers) => {
+  let measurements = measurementToArray(selectedSignals, metricItem, 'signal');
+  if (measurements === null) {
+    measurements = [];
+  }
+  const metricTagMap = measurements?.reduce((acc, met) => {
+    acc[met] = getSimpleMetricModifier(selectedSignals, met, modifiers);
+    return acc;
+  }, {});
+  const hasAllMetricTags = measurements?.filter((m) => {
+    if (
+      metricTagMap?.[m]?.['unitDisplayName'] &&
+      metricTagMap[m]['unitDisplayName'] !== ''
+    ) {
+      return true;
+    }
+    return false;
+  });
+
+  let unitDisplayPosition = '';
+  for (let metric of measurements) {
+    if (!metric.endsWith('count()') && unitDisplayPosition === '') {
+      if (
+        metricTagMap?.[metric]?.['unitDisplayPosition'] &&
+        metricTagMap[metric]['unitDisplayPosition'] !== ''
+      ) {
+        unitDisplayPosition = metricTagMap[metric]['unitDisplayPosition'];
+        break;
+      }
+    }
+  }
+
+  if (unitDisplayPosition === '') {
+    unitDisplayPosition = 'Prefix';
+  }
+
+  let isAvg = false;
+  if (
+    /[a-zA-Z.# ]*sum\([a-zA-Z ]*\)( *)\/( *)[a-zA-Z.# ]*\(\)$/g.test(
+      metricItem.trim(),
+    )
+  ) {
+    isAvg = true;
+  }
+  if (hasAllMetricTags.length === measurements.length) {
+    measurements?.forEach((m) => {
+      metricItem = metricItem?.replaceAll(
+        m,
+        metricTagMap[m]['unitDisplayName'] === '#'
+          ? 'count'
+          : metricTagMap[m]['unitDisplayName'],
+      );
+    });
+    let resp = buildDivideTag({ metricItem, unitDisplayPosition });
+    if (resp.validTag) {
+      return resp.tagValue;
+    }
+    try {
+      DERIVED_METRIC_CUSTOM_VARIABLES.forEach((variable) => {
+        metricItem = metricItem?.replaceAll(variable.name, variable.symbol);
+      });
+
+      let nodeAll = window.math.simplify(metricItem);
+      let node = buildNode(nodeAll);
+      node = window.math.simplify(node);
+
+      resp = buildDivideTag({
+        metricItem: node.toString(),
+        unitDisplayPosition,
+      });
+      if (resp.validTag) {
+        return resp.tagValue;
+      }
+
+      metricItem = node.toString().replaceAll('count', '#');
+      if (isAvg) {
+        metricItem = metricItem + ' (avg)';
+      }
+    } catch (e) {
+      metricItem = '';
+    }
+
+    if (metricItem === '1') {
+      metricItem = '';
+    }
+
+    return { unitDisplayName: metricItem, unitDisplayPosition };
+  } else {
+    return { unitDisplayName: '', unitDisplayPosition: '' };
+  }
+};
+
+export {
+  getSimpleMetricModifier,
+  getDerivedMetricModifier,
+  buildNode,
+  buildDivideTag,
+  buildUnitModifierMap,
+  getPowerValue,
+};

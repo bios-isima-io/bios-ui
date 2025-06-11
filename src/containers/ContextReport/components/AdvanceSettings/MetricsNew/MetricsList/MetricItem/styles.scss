@@ -1,0 +1,230 @@
+@import 'app/styles/variable';
+$section-header-text-color: black;
+$items-border-color: #a6a6a6;
+$background-color: #fff;
+.metric-item-container {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid $items-border-color;
+  padding-top: 24px;
+  background-color: #f5f6f7;
+
+  .editable-text {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .editable-onclick-input {
+    max-width: calc(100% - 86px);
+  }
+
+  .title-text,
+  .ant-input {
+    font-size: 11px !important;
+  }
+
+  .title-text {
+    padding: 7px 12px !important;
+    max-width: 100%;
+    background: white;
+  }
+
+  .edit-name {
+    width: 86px;
+    margin-top: 6px;
+    min-width: 86px;
+    color: $section-header-text-color;
+    font-size: 12px;
+  }
+
+  .metric-edit {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px;
+    .metric-value {
+      height: 32px;
+      width: 100%;
+      padding: 8px 12px;
+      border-radius: 4px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      font-size: 11px;
+      font-weight: 400;
+      color: black;
+    }
+  }
+
+  .icon-metrics {
+    font-size: 20px;
+    padding-top: 6px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  .legend-edit {
+    display: flex;
+    flex-direction: row;
+    .legend {
+      height: 32px;
+      width: 100%;
+      background-color: $background-color;
+      padding: 6px;
+      border-radius: 4px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  .options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 23px 0px;
+    .chart-type {
+      display: flex;
+      flex-direction: row;
+
+      .ant-radio-group,
+      .ant-radio-button-wrapper {
+        height: 26px !important;
+      }
+
+      .ant-radio-button-wrapper {
+        padding: 1px !important;
+      }
+
+      .ant-radio-button-wrapper-disabled {
+        background: #dddbda !important;
+      }
+
+      .chart-type-title {
+        margin-top: 7px;
+        font-size: 12px;
+        color: $section-header-text-color;
+        min-width: 86px;
+      }
+
+      .ant-radio-button-wrapper {
+        background-color: unset;
+        border-color: transparent;
+        box-shadow: none;
+        padding: 4px !important;
+        margin-right: 15px;
+      }
+
+      .ant-radio-button-wrapper:not(
+          .ant-radio-button-wrapper-disabled
+        )::before {
+        background-color: unset;
+      }
+
+      .anticon-pie-chart {
+        color: black;
+      }
+
+      .pie-chart-icon {
+        position: relative;
+        top: -6px;
+      }
+
+      .ant-radio-button-checked {
+        background-color: #393939;
+        border: 1px solid $items-border-color;
+        border-radius: 2px;
+      }
+
+      .ant-radio-button-wrapper-checked {
+        .icon-line-chart-1:before {
+          color: white;
+        }
+        .icon-bar-chart-1:before {
+          color: white;
+        }
+        .icon-area-chart-1:before {
+          color: white;
+        }
+        .icon-bubble-plot:before {
+          color: white;
+        }
+        .icon-layers:before {
+          color: white;
+        }
+        .anticon-pie-chart > svg {
+          color: white;
+        }
+      }
+
+      .chart-icon {
+        position: relative;
+        font-size: 18px;
+        top: -3px;
+      }
+
+      .bubble-icon {
+        font-weight: 600;
+      }
+    }
+
+    .y-axis-toggle {
+      display: flex;
+      flex-direction: row;
+      .bubble-plot-axis {
+        font-size: 11px;
+        margin-top: 6px;
+        min-width: 32px;
+        color: $section-header-text-color;
+      }
+
+      .y-axis-toggle-text {
+        margin-top: 7px;
+        margin-right: 15px;
+        font-size: 12px;
+        color: $section-header-text-color;
+      }
+
+      .y-axis-toggle-icon {
+        font-size: 18px;
+        cursor: pointer;
+        position: relative;
+        top: 7px;
+      }
+
+      .y-axis-toggle-icon-rotated {
+        position: relative;
+        top: 10px;
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .percentage-selector {
+    display: flex;
+    margin-bottom: 20px;
+
+    .percentage-selector-title {
+      min-width: 90px;
+      font-size: 12px;
+    }
+  }
+
+  @media (min-width: $isima-large-device-breakpoint) {
+    .options {
+      margin-right: 40px;
+    }
+  }
+
+  .metric-icon-move {
+    position: relative;
+    top: 110px;
+    left: -30px;
+    @media (max-width: $isima-large-device-breakpoint) {
+      left: -16px;
+    }
+  }
+}

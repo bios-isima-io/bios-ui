@@ -1,0 +1,28 @@
+# Don't check auto-generated stuff into git
+coverage
+build
+dist
+packaging
+node_modules
+stats.json
+
+# Cruft
+.DS_Store
+npm-debug.log
+.idea
+
+# Logs
+yarn-error.log
+
+# /.gitignore
+config/index.js
+
+.factorypath
+.history
+**/out/*
+
+**/package-lock.json
+**/yarn.lock
+/test-results/
+/playwright-report/
+/playwright/.cache/

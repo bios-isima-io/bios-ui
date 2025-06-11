@@ -1,0 +1,80 @@
+@import 'app/styles/variable';
+
+.insight-overview-container {
+  padding-top: 10px;
+  font-family: Poppins;
+  .title {
+    padding-top: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 20px;
+    font-weight: 700;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 52px;
+  }
+
+  .report-duration {
+    padding-top: 9px;
+    font-size: 10px;
+    font-weight: 300;
+    color: #3e3e3c;
+  }
+
+  .overview-chart-data-wrapper {
+    @media (max-width: $isima-large-device-breakpoint) {
+      display: flex;
+      gap: 10px;
+      margin: 10px;
+      padding-bottom: 10px;
+      overflow-y: scroll;
+    }
+  }
+
+  .overview-properties {
+    height: 46px;
+    background-color: #f5f6f7;
+    padding: 4px 2px;
+    margin: auto;
+    margin-top: 22px;
+    min-width: 160px;
+    width: 160px;
+    border-radius: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    .value {
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .prop {
+      font-size: 10px;
+      font-weight: 400;
+      color: #3e3e3c;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding: 0px 4px;
+    }
+  }
+
+  .fav-container {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: $isima-large-device-breakpoint) {
+  .insight-overview-container {
+    display: grid;
+    grid-template-columns: 270px 700px;
+
+    .overview-chart {
+      grid-row-start: 1;
+      grid-row-end: 10;
+      grid-column-start: 2;
+    }
+  }
+}

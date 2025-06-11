@@ -1,0 +1,18 @@
+@import "app/styles/imports";
+.radio-group {
+  display: flex;
+  color: #011627;
+  flex-flow: row;
+
+  input {
+    max-width: 8rem;
+  }
+
+  >* {
+    margin-right: 1rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

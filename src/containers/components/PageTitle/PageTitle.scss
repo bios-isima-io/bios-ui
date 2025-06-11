@@ -1,0 +1,28 @@
+@import 'app/styles/variable';
+$black-dark: #2b2826;
+.page-title-container {
+  padding-top: 90px;
+  text-align: center;
+  position: relative;
+  @media (min-width: $isima-large-device-breakpoint) {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    padding-top: 65px;
+  }
+  .page-title {
+    color: $black-dark;
+    font-size: 36px;
+  }
+
+  .title-actions {
+    margin-top: 20px;
+    @media (max-width: $isima-large-device-breakpoint) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-right: 0px;
+      margin-top: 38px;
+    }
+  }
+}

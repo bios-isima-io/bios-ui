@@ -1,0 +1,345 @@
+@import "app/styles/imports";
+
+#root .page-wrapper:has(.login-page) {  
+  background-color: $background-login;
+}
+
+.login-html {
+  overflow-x: hidden;
+
+  .page-wrapper {
+    padding: 0 !important;
+    max-width: 100% !important;
+    animation-name: none !important;
+    animation-duration: initial;
+
+    &.extra-margin {
+      margin-left: 0 !important;
+    }
+  }
+}
+
+.login-page {
+  max-width: 1460px;
+  width: 80%;
+  padding-left: 15px;
+  padding-right: 15px;
+  min-height: 100vh;
+  margin: -3.3rem auto 0;
+  position: relative;
+  background-color: $background-login;
+
+  .ant-row-flex {
+
+    > .ant-col {
+      margin-top: 7rem;
+    }
+  }
+
+  .face {
+    position: absolute;
+    width: 65%;
+    right: 0%;
+  }
+
+  .login-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 99;
+    background-color: black;
+  }
+
+  .video-cover {
+    background-color: rgba(black, .65);
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 100;
+  }
+
+  .logo {
+    position: relative;
+    top: 1.6rem;
+    margin-bottom: 2.6rem;
+    left: -.5rem;
+    width: max-content;
+  }
+
+  .content {
+
+    &.login-area-container {
+      padding-left: 4rem;
+      justify-content: center;
+      padding-top: 0 !important;
+      margin-top: -4rem !important;
+    }
+
+    .no-error {
+      visibility: hidden;
+    }
+
+    span {
+
+      &.page-item {
+        display: flex;
+        flex-flow: row;
+        width: 16rem;
+        position: relative;
+
+        input {
+          caret-color: $isima-red-btn-color;
+          padding-left: 2.5rem;
+        }
+
+        a {
+          width: 12rem;
+          margin: 0 1rem;
+          position: absolute;
+          left: 17rem;
+        }
+      }
+    }
+
+    .page-item {
+      margin: .6rem 0;
+      z-index: 101;
+
+      .ant-input-password-icon {
+        color: $isima-grey-1;
+
+        &:hover {
+          color: $black;
+        }
+      }
+
+      &.invalid {
+        background-color: rgba($error-color, .6);
+        color: $white;
+
+        &::placeholder { /* Firefox, Chrome, Opera */
+          color: $white;
+        }
+      }
+
+      input {
+        color: #999999 !important;
+
+        &::placeholder {
+          color: #999999 !important;
+        }
+      }
+
+      &.hr {
+        height: 1px;
+        color: $black;
+        background-color: $black;
+        border: none;
+        opacity: .8;
+        min-width: 16rem;
+        margin: 1.5rem 0 !important;
+      }
+    }
+  }
+
+  .right-pan {
+    min-height: 718px;
+
+    .footer {
+      height: 33.32vh;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+
+      > h1 {
+        color: $black;
+        text-align: center;
+        font-weight: normal;
+        font-size: 22px;
+      }
+    }
+
+    .customers {
+      svg {
+        fill: $isima-red-btn-color;
+        g {
+          fill:  $isima-red-btn-color;
+        }
+        path {
+          fill: $isima-red-btn-color;
+        }
+      }
+      h1, h3 {
+        color: $black;
+        text-align: center;
+        padding: 1rem 0;
+
+        svg {
+          margin: 0 .8rem;
+          fill: $black;
+          g {
+            fill: $black;
+          }
+          path {
+            fill: $black
+          }
+        }
+      }
+
+      .slick-dots {
+
+        &.slick-dots-bottom {
+          li {
+            button {
+              color: $black;
+              background: $black;
+            }
+          }
+        }
+      }
+    }
+
+    .cls-1 {
+      fill:none;
+      stroke:#941100;
+      stroke-miterlimit:10;
+      stroke-width:8.88px;
+    }
+  }
+}
+
+.ant-carousel {
+  width: 80%;
+  margin: 5rem 0;
+
+  &:first-child {
+    padding: 2rem 0 0;
+  }
+
+  .slick-slide {
+    text-align: center;
+    line-height: 2rem;
+    overflow: hidden;
+
+    > div {
+
+      > div {
+        margin-bottom: 2rem;
+      }
+    }
+
+    h1 {
+      font-weight: normal;
+    }
+
+    img {
+      display: initial !important;
+    }
+
+    .carousel-heading {
+      margin-bottom: 3rem;
+    }
+  }
+
+  .slick-slider {
+
+    .slick-dots {
+
+      &.slick-dots-bottom {
+
+        li {
+
+          button {
+            background-color: #333333;
+            border-radius: 8px;
+            height: 16px;
+            width: 16px;
+          }
+
+          &.slick-active {
+            button {
+              background-color: $isima-red-btn-color;
+              width: 27px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.login-carousel {
+  opacity: 0;
+}
+
+@media screen and (min-width: 320px) {
+  .login-page {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .login-page {
+    width: 85%;
+  }
+}
+
+@media screen and (min-width: 993px) {
+  .login-page {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .login-page {
+    width: 90%;
+  }
+}
+
+
+@media screen and (min-width : 320px) {
+  .login-page {
+
+    .ant-row-flex {
+
+      > .ant-col {
+
+        &:first-child {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .right-pan {
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width : 992px) {
+  .login-page {
+
+    .ant-row-flex {
+
+      > .ant-col {
+
+        &:first-child {
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+        }
+
+        .right-pan {
+          align-items: flex-end;
+        }
+      }
+    }
+  }
+}

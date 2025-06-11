@@ -1,0 +1,19 @@
+---
+$schema: https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json
+version: '0.2'
+dictionaryDefinitions:
+  - name: project-words
+    path: './project-words.txt'
+    addWords: true
+dictionaries:
+  - project-words
+ignorePaths:
+  - 'node_modules'
+  - '/project-words.txt'
+  - 'src/components/react-multi-select/dist'
+  - 'src/components/react-multi-select/src/stories'
+  - 'src/containers/Learn/DocumentMarkup.js'
+  - 'src/containers/ReportV2/components/ReportGraph/dataProc/groupByX/topo/world.js'
+  - 'src/containers/ReportV3/components/ReportGraph/dataProc/groupByX/topo/world.js'
+  - 'plugins'
+  - '**/*.test.js'

@@ -1,0 +1,41 @@
+.bios-toast{
+  padding: 0;
+  .ant-notification-notice-message{
+    background: #F5F6F7;
+    border-radius: 3px 0 0 3px;
+    padding: 6px 20px;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .ant-notification-notice-description{
+    padding: 10px 20px 16px 20px;
+    font-size: 16px;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.65);
+  }
+  .ant-notification-notice-close{
+    top: 8px;
+  }
+}
+.toast-warn{
+  .ant-notification-notice-message{
+    color: rgba(250, 173, 20, 0.67);
+  }
+}
+
+.toast-error{
+  .ant-notification-notice-message{
+    color: rgba(245, 34, 45, 0.67);
+  }
+}
+
+.toast-success{
+  .ant-notification-notice-message{
+    color: rgba(82, 196, 26, 0.56);
+  }
+}
+.toast-info{
+  .ant-notification-notice-message{
+    color: rgba(0, 0, 0, 0.85);
+  }
+}

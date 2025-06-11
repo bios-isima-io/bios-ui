@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Document</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+  />
+  <link
+    rel="stylesheet"
+    href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    html {
+      font-size: 20px;
+    }
+    body {
+      font-family: 'Inter', sans-serif !important;
+    }
+    body,
+    .app-nav li ul li,
+    .sidebar ul li a,
+    input[type='search'] {
+      font-size: 1em;
+    }
+    .app-nav {
+      left: 300px !important;
+      right: unset !important;
+    }
+    @media only screen and (min-device-width: 600px)
+    {
+      .app-nav {
+      margin: 0 0 0 0 !important;
+      padding: 25px 60px 25px 0 !important;
+      background: white;
+      position: fixed !important;
+      text-align: left !important;
+      width: 100%;
+      }
+    }
+    @media only screen and (max-width: 600px)
+    {
+      nav {
+      margin-left: 25px !important;
+      }
+    }
+    .sidebar-nav {
+      margin-left: 12px;
+    }
+
+    .sidebar-nav > ul {
+      margin-left: 5px;
+    }
+    .sidebar-nav .file {
+      padding-left: 8px;
+    }
+    .sidebar-nav ul:not(.app-sub-sidebar) > li:not(.file)::before {
+      left: 0px !important;
+      top: 14px !important;
+    }
+    .sidebar ul>li {
+      padding-left: 6px;
+    }
+    .sidebar-nav>ul>li.level-1 {
+      padding-left: 12px;
+    }
+    .sidebar ul li>a {
+      padding-left: 9px;
+    }
+    .pagination-item-label {
+      pointer-events: none;
+    }
+  </style>
+  <link href="/css/main.css" rel="stylesheet" />
+</head>
+<body>
+<div id="app"></div>
+<script>
+      window.$docsify = {
+        alias: {
+            '.*/_navbar.md': '/docs/_navbar.md',
+            '/docs/': '/docs/content/introduction/introduction.md',
+        },
+        name: 'bi(OS)',
+        repo: '',
+        relativePath: false,
+        homepage: false,
+        search: 'auto',
+        themeColor: '#941100',
+        loadNavbar: true,
+        mergeNavbar: true,
+        loadSidebar: true,
+        routerMode: 'history',
+        // coverpage: true,
+        vueGlobalOptions: {
+          data() {
+            return {
+              count: 0,
+            };
+          },
+        },
+        tabs: {
+          persist: true, // default
+          sync: false, // default
+          theme: 'classic', // default
+          tabComments: true, // default
+          tabHeadings: true, // default
+        },
+        copyCode: {
+          buttonText: 'Copy to clipboard',
+          errorText: 'Error',
+          successText: 'Copied',
+        },
+        pagination: {
+          previousText: 'Previous',
+          nextText: 'Next',
+          crossChapter: true,
+          crossChapterText: true,
+        },
+        sidebarDisplayLevel: 1, // set sidebar display level
+        footer: {
+          copy: '<span>Copyright © 2024 Isima Inc. Confidential. All rights reserved. Do not distribute without consent.</span>',
+          auth: '&nbsp;',
+          pre: '<hr style="border-bottom:1px solid grey" />',
+          style: 'text-align: left;',
+        },
+        plugins: [
+          function onload(hook, vm) {
+            hook.doneEach(function() {
+             const prevBtn = document.getElementsByClassName('pagination-item--previous')?.[0];
+             const nextBtn = document.getElementsByClassName('pagination-item--next')?.[0];
+              prevBtn?.addEventListener("click",function(){
+                window?.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+              });
+              nextBtn?.addEventListener("click",function(){
+                window?.scrollTo({ left: 0, top:0, behavior: "smooth" });
+              });
+              const paginationContainer = document?.getElementsByClassName('docsify-pagination-container')?.[0];
+              if (paginationContainer && paginationContainer?.innerHTML === "") {
+                paginationContainer.style.border = 'none';
+              }
+            })
+          },
+        ],
+      };
+    </script>
+
+<!-- Docsify v4 -->
+<script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
+<script src="https://unpkg.com/docsify/lib/plugins/search.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/components/prism-java.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/components/prism-python.min.js"></script>
+<script src="js/footnotes.min.js"></script>
+<link
+  rel="stylesheet"
+  href="//cdn.jsdelivr.net/npm/docsify/themes/buble.css"
+/>
+<script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+<link
+  rel="stylesheet"
+  href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css"
+/>
+<script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+<script src="//unpkg.com/docsify-footer-enh/dist/docsify-footer-enh.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-footnote/dist/docsify-footnote.min.js"></script>
+</body>
+</html>

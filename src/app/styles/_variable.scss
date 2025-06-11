@@ -1,0 +1,54 @@
+//V2 variables
+$isima-large-device-breakpoint: '1280px';
+$mobile-screen-breakpoint: 1280px; //remove this
+$app-background-color: #F5F6F7;
+
+
+//V1 variables.
+// TODO: Figure out which ones are still needed. Otherwise get rid of rest of them.
+
+
+$isima-primary: #40a9ff;
+
+$isima-controls-height: 48px;
+
+$isima-std-border-radius: 4px;
+$isima-round-border-radius: 50%;
+$isima-controls-padding: 0 1rem;
+
+$isima-font-size-base: 16px;
+
+
+$isima-grey-1: #a0a9ba;
+$isima-grey-2: #e1e4ea;
+
+
+$primary-color: #aa8c68; // primary color for all components
+$secondary-color: #b25447;
+$link-color: #1890ff; // link color
+$success-color: #52C41A; // success state color
+$warning-color: #FAAD13; // warning state color
+$error-color: #F5232D; // error state color
+
+$white: #FDFFFC;
+$black: #272727;
+$black-dark: #000;
+
+$heading-color: rgba($black-dark, 0.85); // heading text color
+$text-color: fade(#011627, 1); // major text color
+$text-color-secondary : fade(#011627, .65);
+
+
+
+$btn-height-base: 32px;
+$btn-height-lg: 38px;
+$btn-height-sm: 28px;
+
+$apply-btn-color: #958D42;
+$level-two-btn-color: #aa8c68;
+$level-three-btn-color: #c5bc9a;
+$isima-red-btn-color: #941100;
+
+
+$backgroud-white: #fcfcfc;
+$background-login: #fff;

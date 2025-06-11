@@ -1,0 +1,31 @@
+@import 'app/styles/variable';
+.report-filters {
+  margin-top: 25px;
+  margin-left: 20px;
+  margin-right: 10%;
+
+  .row {
+    display: flex;
+    .column {
+      padding: 5px 0px 25px 0px;
+      max-width: 50%;
+      width: 50%;
+    }
+    .dimension-name {
+      color: black;
+      font-size: 12px;
+      margin-top: 10px;
+      text-overflow: ellipsis;
+      padding-right: 10px;
+      overflow: hidden;
+    }
+  }
+
+  .loading-filter {
+    div {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import 'app/styles/variable';
+
+.above-graph-options {
+  margin-top: 55px;
+  display: flex;
+  justify-content: space-between;
+
+  .right-section {
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: $isima-large-device-breakpoint) {
+  .above-graph-options {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 20px;
+  }
+}

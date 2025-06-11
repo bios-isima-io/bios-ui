@@ -1,0 +1,11 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target" : { "namespace": "android_app", "package_name": "io.isima.bios.twa",
+      "sha256_cert_fingerprints": ["78:8E:7E:4B:4C:F8:7D:00:58:8A:6F:0B:39:E0:9D:41:90:8E:E4:4E:31:32:96:A7:09:23:F5:1C:B1:5E:EB:DE"] }
+  },{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target" : { "namespace": "android_app", "package_name": "io.isima.bios.twa",
+    "sha256_cert_fingerprints": ["D4:01:F6:D1:8D:4F:6B:1E:ED:31:45:19:8A:78:36:50:72:71:35:FF:96:76:B0:83:94:CC:17:35:93:13:5C:A6"] }
+  }
+]

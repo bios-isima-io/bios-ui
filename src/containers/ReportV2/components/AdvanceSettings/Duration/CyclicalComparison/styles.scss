@@ -1,0 +1,110 @@
+$radio-btn-bg-color: #ffffff;
+$radio-btn-border-color: #dddbda;
+$radio-btn-checked-text-color: white;
+$radio-btn-checked-bg-color: #393939;
+$radio-btn-checked-border-color: #dddbda;
+$radio-btn-checked-icon-color: white;
+
+.cyclical-comp-container {
+  margin-top: 26px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #a6a6a6;
+  .cc-header {
+    font-size: 12px;
+    display: flex;
+    justify-content: left;
+    column-gap: 18px;
+
+    .title {
+      font-size: 12px;
+      margin-top: 2px;
+    }
+    .cyclical-disabled-wrapper {
+      margin-left: 20px;
+      margin-top: 2px;
+    }
+  }
+  .duration-display {
+    font-size: 11px;
+    font-style: italic;
+    font-weight: 400px;
+    color: #6d6b6b;
+    margin-top: 11px;
+    min-height: 15px;
+  }
+}
+
+.cyclical-comparison {
+  margin-top: 20px;
+  position: relative;
+  .top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+    .right-section {
+      display: flex;
+      align-items: center;
+      span {
+        margin-right: 8px;
+        font-size: 12px;
+        color: #706e6b;
+      }
+    }
+  }
+  .ant-radio-button-wrapper {
+    padding: 0 0px !important;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: 1px solid #dddbda;
+    font-size: 12px;
+    height: 28px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 2rem;
+
+    &::before {
+      display: none !important;
+    }
+    &:first-child {
+      margin-left: 0px;
+      border-radius: 5px;
+    }
+    &:last-child {
+      margin-right: 0px;
+      border-radius: 5px;
+    }
+
+    &:not(:last-child) {
+      min-width: 66px;
+    }
+  }
+
+  .ant-radio-button-wrapper-checked {
+    color: $radio-btn-checked-text-color !important;
+    background: $radio-btn-checked-bg-color !important;
+    border-color: $radio-btn-checked-border-color !important;
+    box-shadow: unset !important;
+    font-weight: 600;
+    .icon-Settings:before {
+      color: $radio-btn-checked-icon-color !important;
+      background: $radio-btn-checked-bg-color !important;
+    }
+  }
+
+  .ant-radio-button-wrapper-unchecked {
+    background: unset;
+    box-shadow: unset;
+    border-color: none;
+    border: 1px solid transparent !important;
+  }
+  .custom-date-wrapper {
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+  }
+}

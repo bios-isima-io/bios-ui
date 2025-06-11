@@ -1,0 +1,18 @@
+.timezone-container {
+	margin-top: 26px;
+	margin-bottom: 10px;
+	padding-left: 20px;
+	padding-bottom: 15px;
+
+	.header {
+		font-size: 12px;
+	}
+	.timezone-select {
+		margin-top: 20px;
+		width: 300px;
+	}
+
+	.ant-select-selector {
+		border-color: #bbb  !important;
+	}
+}

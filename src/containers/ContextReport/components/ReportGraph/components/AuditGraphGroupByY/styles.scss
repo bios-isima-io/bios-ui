@@ -1,0 +1,27 @@
+.audit-graph-groupby-y {
+  margin-left: 20px;
+  margin-top: 40px;
+
+  .header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 12px;
+  }
+  
+  .no-data {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 12px;
+
+    .icon-no-data {
+      margin: 20px 0px;
+      font-size: 50px;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+$border-color: #9F9D9B;
+
+.title-page {
+  display: flex;
+  //margin: 0px 20px;
+  border-bottom: 1px solid #9F9D9B;
+  justify-content: space-between;
+  align-items: center;
+  h2{
+    font-size: 20px;
+    margin-bottom: 0px;
+  }
+  &-header {
+    font-size: 1.25rem;
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+  .right-panel{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 0px;
+    align-items: center;
+    position: relative;
+    span.trigger-link{
+      cursor: pointer;
+      background: transparent;
+      display: inline-block;
+      padding: 20px;
+      border-radius: 8px 8px 0px 0px;
+      &.active{
+        background: #AA8C68;
+      }
+    }
+  }
+}

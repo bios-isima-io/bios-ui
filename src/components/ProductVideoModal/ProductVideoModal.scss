@@ -1,0 +1,13 @@
+.onboarding-video-modal{
+  position: absolute;
+  right: 0px;
+  padding: 10px 40px;
+  background: #FFFFFF;
+  z-index: 999;
+  border: 1px solid #AA8C68;
+  border-radius: 8px 0px 8px 8px;
+  width: 1024px;
+}
+
+.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; }
+.embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }

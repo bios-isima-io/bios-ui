@@ -1,0 +1,19 @@
+@import 'app/styles/imports';
+.verify-user-page {
+  background-color: #ffffff;
+  .ant-input {
+    background-color: #f5f6f7 !important;
+
+    &::placeholder {
+      color: #878787;
+      font-size: 12px;
+      font-style: italic;
+      font-weight: 500;
+    }
+  }
+
+  a {
+    color: black;
+    font-weight: 500;
+  }
+}

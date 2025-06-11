@@ -1,0 +1,33 @@
+@import "app/styles/variable";
+
+.page-progress-bar {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9000;
+
+  animation-name: rotate;
+  animation-duration: 1s;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+
+  .scroll-down-icon {
+    transform: rotate(270deg);
+    font-size: 26px;
+    margin-right: 4px;
+    color: #918f8f;
+  }
+
+  @keyframes rotate {
+    0% {
+      bottom: 30px;
+    }
+    100% {
+      bottom: 20px;
+    }
+  }
+
+  @media (min-width: $isima-large-device-breakpoint) {
+    display: none;
+  }
+}

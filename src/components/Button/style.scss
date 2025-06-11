@@ -1,0 +1,192 @@
+@import "app/styles/imports";
+.ant-btn {
+  //font-weight: normal !important;
+  //font-size: 1rem !important;
+
+  &.ant-btn-secondary {
+    background-color: $primary-color;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      background-color: rgba($primary-color, .8);
+      color: rgba($white, 1)
+    }
+
+    &:active,
+    &.active {
+      color: rgba($white, 1)
+    }
+
+    &.ant-btn-background-ghost {
+      color: rgba($primary-color, 1);
+
+      &:hover,
+      &:focus,
+      &:active,
+      &.active {
+        background-color: rgba($primary-color, .8);
+        color: rgba($primary-color, 1)
+      }
+    }
+  }
+
+  &.ant-btn-isima-red{
+    background-color: $isima-red-btn-color;
+    border-color: $isima-red-btn-color;
+    color: $white;
+    width: 7rem;
+
+    &:hover,
+    &:focus {
+      background-color: rgba($isima-red-btn-color, .8);
+      color: rgba($white, 1);
+      border-color: $isima-red-btn-color;
+    }
+
+    &:active,
+    &.active {
+      color: rgba($white, 1);
+      border-color: $isima-red-btn-color;
+    }
+  }
+
+  &.ant-btn-success {
+    background-color: $success-color;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      background-color: rgba($success-color, .8);
+      color: rgba($white, 1);
+      border-color: $success-color;
+    }
+
+    &:active,
+    &.active {
+      color: rgba($white, 1);
+      border-color: $success-color;
+    }
+  }
+
+  &.ant-btn-apply {
+    background-color: $apply-btn-color;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      background-color: rgba($apply-btn-color, .8);
+      color: rgba($white, 1);
+      border-color: $apply-btn-color;
+    }
+
+    &:active,
+    &.active {
+      color: rgba($white, 1);
+      border-color: $apply-btn-color;
+    }
+  }
+  &.ant-btn-level-two {
+    background-color: $level-two-btn-color;
+    color: $white;
+    &.ant-btn-background-ghost {
+      border-color: $level-two-btn-color;
+      color: $level-two-btn-color;
+
+      &:hover {
+        border-color: rgba($level-two-btn-color, .8);
+        color: rgba($level-two-btn-color, .8);
+      }
+    }
+
+    &:hover,
+    &:focus {
+      background-color: rgba($level-two-btn-color, .8);
+      color: rgba($white, 1);
+      border-color: $level-two-btn-color;
+    }
+    &:active,
+    &.active {
+      color: rgba($white, 1);
+      border-color: $level-two-btn-color;
+    }
+
+    &.ant-btn-background-ghost {
+      color: rgba($level-two-btn-color, 1);
+
+      &:hover,
+      &:focus,
+      &:active,
+      &.active {
+        background-color: rgba($level-two-btn-color, .8);
+        color: rgba($level-two-btn-color, 1)
+      }
+    }
+  }
+
+  &.ant-btn-level-four {
+    background-color: rgba($isima-grey-2, 1);
+    color: $black;
+    font-weight: normal !important;
+    box-shadow: none;
+    &:hover,
+    &:focus {
+      background-color: rgba($isima-grey-2, 1);
+      color: rgba($black, 1);
+      border-color: rgba($isima-grey-2, 1);
+      font-weight: normal !important;
+    }
+    &:active,
+    &.active {
+      font-weight: normal !important;
+      color: rgba($black, 1);
+      border-color: rgba($isima-grey-2, 1);
+    }
+
+    &.ant-btn-background-ghost {
+      color: rgba($isima-grey-2, 1);
+
+      &:hover,
+      &:focus,
+      &:active,
+      &.active {
+        background-color: rgba($isima-grey-2, 1);
+        color: rgba($isima-grey-2, 1)
+      }
+    }
+  }
+
+  &.ant-btn-level-three {
+    background-color: rgba($level-three-btn-color, .55);
+    color: $black;
+    font-weight: normal !important;
+    border-color: rgba($level-three-btn-color, .60);
+
+    &:hover,
+    &:focus {
+      background-color: rgba($level-three-btn-color, .8);
+      color: rgba($black, 1);
+      border-color: rgba($level-three-btn-color, .90);
+      font-weight: normal !important;
+    }
+    &:active,
+    &.active {
+      font-weight: normal !important;
+      color: rgba($black, 1);
+      border-color: rgba($level-three-btn-color, .90);
+    }
+
+    &.ant-btn-background-ghost {
+      color: rgba($level-three-btn-color, 1);
+
+      &:hover,
+      &:focus,
+      &:active,
+      &.active {
+        background-color: rgba($level-three-btn-color, .8);
+        color: rgba($level-three-btn-color, 1)
+      }
+    }
+  }
+}
+

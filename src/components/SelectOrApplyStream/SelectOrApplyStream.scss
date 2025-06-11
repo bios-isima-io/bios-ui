@@ -1,0 +1,45 @@
+.ant-select-selection-selected-value {
+
+  h3 {
+    display: none;
+  }
+}
+
+.select-row {
+  .ant-btn {
+    font-weight: normal !important;
+    font-size: 1rem !important;
+  }
+
+  .hover-effect {
+    max-width: 2.64rem;
+    -webkit-transition: max-width 1s;
+    transition: max-width 1s;
+    overflow: hidden;
+    padding-top: 2px;
+
+    span {
+      max-width: 0;
+      -webkit-transition: max-width 1s;
+      transition: max-width 1s;
+      display: inline-block;
+      vertical-align: top;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .anticon {
+      font-size: 1.2rem;
+      left: -5px;
+      top: -3px;
+    }
+
+    &:hover {
+      max-width: initial;
+
+      span {
+        max-width: 7rem;
+      }
+    }
+  }
+}

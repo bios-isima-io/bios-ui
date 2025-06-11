@@ -1,0 +1,93 @@
+$radio-btn-bg-color : #FFFFFF;
+$radio-btn-border-color : #DDDBDA;
+$radio-btn-checked-text-color : white;
+$radio-btn-checked-bg-color : #393939;
+$radio-btn-checked-border-color : #DDDBDA;
+
+.window-size-container {
+	margin-top: 26px;
+	margin-bottom: 10px;
+	padding-left: 20px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #A6A6A6;
+	
+	.window-size-header-container {
+		display: flex;
+		width: 120px;
+		justify-content: space-between;
+	}
+
+	.header {
+		font-size: 12px;
+	}
+
+	.duration-display {
+		font-size: 10px;
+		font-style: italic;
+		font-weight: 400;
+		color: #6D6B6B;
+		margin-top: 11px;
+	}
+
+	.on-the-fly-container {
+		display: flex;
+		margin-top: 20px;
+		.on-the-fly-text {
+			font-size: 12px;
+			margin-top: 2px;
+		}
+		.on-the-fly-toggle {
+			margin: 0 20px;
+		}
+		.icon-shuffle {
+			position: absolute;
+			font-size: 20px;
+		}
+	}
+}
+
+//TODO: try to reuse this with time duration
+.window-size-duration {
+	margin-top: 20px;
+	position: relative;
+	.ant-radio-button-wrapper {
+		margin-left: 4px;
+		margin-right: 4px;
+		padding-left: 4px;
+		padding-right: 4px;
+		border-radius: 5px;
+		line-height: 28px;
+		height: 28px;
+		background-color: $radio-btn-bg-color;
+		border: none;
+		font-size: 11px;
+		width: 40px;
+		text-align: center;
+
+		&::before {
+			display: none !important;
+		}
+		&:first-child {
+			margin-left: 0px;
+			border-radius: 5px;
+		}
+		&:last-child {
+			margin-right: 0px;
+			border-radius: 5px;
+		}
+	}
+
+	.ant-radio-button-wrapper-checked {
+		color: $radio-btn-checked-text-color !important;
+		background: $radio-btn-checked-bg-color !important;
+		box-shadow: none !important;
+		border: 1px solid $radio-btn-checked-border-color !important;
+		font-weight: 700;
+	}
+
+	.ant-radio-button-wrapper-unchecked {
+		background: unset;
+		box-shadow: unset;
+		border: 1px solid transparent !important;
+	}
+}

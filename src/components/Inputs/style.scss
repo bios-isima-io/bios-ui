@@ -1,0 +1,11 @@
+@import "app/styles/imports";
+.input {
+  background-color: $isima-grey-2;
+  height: $isima-controls-height;
+  padding: $isima-controls-padding;
+  border: none;
+  border-radius: $isima-std-border-radius;
+  color: $isima-grey-1;
+  min-width: 16rem;
+  font-size: 17px;
+}

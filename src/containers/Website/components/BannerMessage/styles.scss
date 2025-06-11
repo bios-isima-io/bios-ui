@@ -1,0 +1,28 @@
+.simple-banner {
+  background-color: #232323;
+  color: white;
+  text-align: center;
+  z-index: 10000;
+  position: relative;
+
+  .simple-banner-text {
+    padding: 8px 20px;
+    padding-top: 12px;
+    font-weight: 700;
+    font-size: 18px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 1024px) {
+      display: block;
+      padding: 12px 10px;
+      line-height: 28.8px;
+      word-spacing: 0.5px;
+    }
+    a {
+      color: #941100;
+    }
+  }
+}

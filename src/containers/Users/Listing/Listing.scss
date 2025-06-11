@@ -1,0 +1,100 @@
+@import "app/styles/variable";
+
+.user-listing-wrapper{
+  background: #FFFFFF;
+  margin-top: 25px;
+  .header-list{
+    display: grid;
+    grid-template-columns: calc(100% - 270px) 100px 150px;
+    grid-gap: 20px;
+    align-items: center;
+    box-sizing: border-box;
+    height: 50px;
+    border-bottom: 1px solid #E0E0E0;
+    padding-left: 12px;
+    padding-right: 12px;
+
+    color: #ADADAD;
+    font-weight: normal;
+    font-size: 12px;
+    @media (max-width: 1200px){
+      grid-template-columns: calc(100% - 170px) 150px;
+    }
+
+    >div:nth-child(2){
+      text-align: right;
+      @media (min-width: $isima-large-device-breakpoint){
+        text-align: left;
+      }
+    }
+  }
+  .content-list-wrapper{
+    .no-matched{
+      text-align: center;
+      margin-top: 100px;
+      color: #666;
+    }
+  }
+  .list-item{
+    display: grid;
+    grid-template-columns: calc(50% - 10px) calc(50% - 10px);
+    align-items: flex-start;
+    grid-gap: 20px;
+    height: auto;
+    border-bottom: 1px solid #E0E0E0;
+    padding: 12px;
+    font-weight: 500;
+    font-size: 12px;
+    cursor: pointer;
+
+    &:hover {
+      .email,
+      .status,
+      .role {
+        color: #25213b;
+      }
+    }
+
+    @media (min-width: $isima-large-device-breakpoint){
+      font-size: 14px;
+      grid-template-columns: calc(100% - 270px) 100px 150px;
+      height: 74px;
+      align-items: center;
+    }
+    &.active{
+      border-radius: 5px;
+      background: #DEDEDE;
+    }
+    &:hover{
+      border-radius: 5px;
+      background: #c7c7c7;
+    }
+
+    .label{
+      color: #25213B;
+      text-align: left;
+      font-weight: 600;
+    }
+    .email{
+      color: #C4C4C4;
+    }
+    .role, .status{
+      color: #C4C4C4;
+      text-align: right;
+      @media (min-width: $isima-large-device-breakpoint){
+       text-align: left;
+      }
+    }
+    .status{
+      @media (max-width: $isima-large-device-breakpoint){
+        display: none;
+      }
+    }
+    .up{
+      color: #8CB780;
+    }
+    .down{
+      color: #D05128;
+    }
+  }
+}

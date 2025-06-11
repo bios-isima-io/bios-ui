@@ -1,0 +1,57 @@
+@import "app/styles/imports";
+
+.ant-popover-arrow {
+  display: none !important;
+  border: none !important;
+}
+
+.ant-popover-inner {
+ background-color: $white !important;
+  border-radius: 10px !important;
+
+  .ant-popover-inner-content {
+    padding: 0;
+
+    .permissions-select {
+      overflow-y: scroll;
+      min-height: 0;
+      max-height: 400px;
+
+      .perm-select-title {
+        color: gray;
+        padding: 1.5rem 1.5rem .3rem 1rem;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+
+      .perm-select-item {
+        height: 2.5rem;
+        padding: 1rem;
+
+        &:last-child {
+          margin-bottom: 2rem;
+        }
+      }
+
+      .signal-select-item {
+        padding: .6rem 1.5rem .3rem;
+        border-bottom: 1px solid rgba($isima-grey-1, .4);
+        cursor: pointer;
+
+        &:last-child {
+          border: none;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          &:hover {
+            background-color: $white;
+          }
+        }
+
+        &:hover {
+          background-color: rgba($isima-grey-1, .5);
+        }
+      }
+    }
+  }
+}
+

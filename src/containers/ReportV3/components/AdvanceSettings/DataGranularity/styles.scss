@@ -1,0 +1,92 @@
+$dropdown-background-color: #fff;
+.report-data-granularity {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 26px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  border-bottom: 1px solid #a6a6a6;
+  padding-bottom: 15px;
+
+  .data-granularity-header {
+    font-size: 12px;
+  }
+
+  .data-granularity-y-axis,
+  .data-granularity-x-axis {
+    display: flex;
+    flex-direction: row;
+    margin-top: 24px;
+
+    .text {
+      font-size: 12px;
+      color: black;
+    }
+
+    .label {
+      margin-right: 30px;
+      margin-top: 8px;
+      font-size: 12px;
+    }
+
+    .value {
+      margin-right: 10px;
+      margin-top: 9px;
+      font-size: 10px;
+    }
+  }
+  .select-container {
+    min-width: 60px;
+    .icon-chevron-down {
+      font-size: 16px;
+    }
+
+    .icon-chevron-down:before {
+      color: #706e6b;
+    }
+
+    .ant-select-arrow {
+      margin-top: -8px;
+      margin-right: 2px;
+    }
+    .ant-select-selector {
+      background: $dropdown-background-color !important;
+      border: 1px solid #bbb !important;
+      border-radius: 5px !important;
+      line-height: 32px;
+    }
+
+    .ant-select-selection-placeholder {
+      line-height: 32px !important;
+      overflow: unset !important;
+      animation: 1s fadeIn;
+      margin-top: 0px;
+      top: 0;
+      font-size: 12px !important;
+      font-style: italic !important;
+    }
+  }
+
+  .top-disable-container {
+    padding-top: 7px;
+    padding-left: 13px;
+  }
+
+  .icon-Info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    background: #c4c4c4;
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+}
+
+.top-n-tooltip > .ant-tooltip-content > .ant-tooltip-inner {
+  width: 205px;
+}

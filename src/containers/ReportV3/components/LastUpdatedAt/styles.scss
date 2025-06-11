@@ -1,0 +1,10 @@
+@import 'app/styles/variable';
+
+.report-last-updated-at {
+  font-size: 12px;
+  color: grey;
+  @media (max-width: $isima-large-device-breakpoint) {
+    display: flex;
+    justify-content: center;
+  }
+}

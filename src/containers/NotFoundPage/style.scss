@@ -1,0 +1,41 @@
+@import "app/styles/variable";
+
+.not-found-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+.page-not-found-wrapper {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .main-text {
+    font-weight: 100;
+    font-size: 150px;
+    letter-spacing: 4px;
+    color: #3E3E3C;
+    margin-bottom: 25px;
+    @media (min-width: $isima-large-device-breakpoint){
+      font-size: 200px;
+    }
+  }
+  .subtitle{
+    font-family: Helvetica;
+    color: #3E3E3C;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    margin-bottom: 15px;
+  }
+  .desc{
+    color: #3E3E3C;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 23px;
+    margin-bottom: 72px;
+  }
+}

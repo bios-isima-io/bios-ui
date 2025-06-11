@@ -1,0 +1,25 @@
+@import 'app/styles/variable';
+@media only screen and (max-width: $isima-large-device-breakpoint) {
+  .groupby-y-axis {
+    margin-top: 20px;
+  }
+}
+
+.groupby-y-axis {
+  margin-left: 20px;
+  .hide-groupby-y {
+    display: none;
+  }
+
+  .ant-select-selector {
+    font-family: Poppins;
+  }
+
+  .ant-select-focused:not(.ant-select-disabled).ant-select:not(
+      .ant-select-customize-input
+    )
+    .ant-select-selector {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+}

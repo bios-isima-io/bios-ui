@@ -1,0 +1,245 @@
+@import '/src/containers/Website/variable.scss';
+
+.login-page {
+  font-family: RotisSemiSansStd;
+  background-color: white;
+
+  .new-hero-mask {
+    display: none;
+  }
+}
+
+.login-content {
+  max-width: 1075px;
+  width: 90%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+
+  @media (max-width: $mobile-screen-breakpoint) {
+    display: block;
+    padding-bottom: 40px;
+  }
+
+  .left-content {
+    width: 50%;
+
+    .superscript {
+      font-size: 36px;
+      top: -90px;
+      left: 22px;
+    }
+  }
+
+  .right-content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 105px;
+    max-width: 326px;
+    z-index: 1000;
+
+    @media (max-width: $mobile-screen-breakpoint) {
+      width: 100%;
+      margin-left: 0px;
+      max-width: 100%;
+      margin: auto;
+      width: 326px;
+      margin-top: 330px;
+    }
+
+    @media (max-width: 750px) {
+      margin-top: 280px;
+    }
+
+    @media (max-width: 300px) {
+      margin-top: 175px;
+    }
+
+    .login-text {
+      font-size: 48px;
+      margin-top: 25px;
+
+      @media (max-width: $mobile-screen-breakpoint) {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    .password-field {
+      position: relative;
+
+      .password-input-indicator {
+        position: absolute;
+        right: 15px;
+        cursor: pointer;
+      }
+
+      .password-input-indicator-show {
+        top: 12px;
+      }
+
+      .password-input-indicator-hide {
+        top: 17px;
+      }
+    }
+
+    .login-email-text,
+    .login-password-text {
+      margin-bottom: 10px;
+      z-index: 100;
+    }
+
+    #username {
+      margin-bottom: 32px;
+    }
+
+    #password {
+      margin-bottom: 24px;
+    }
+
+    .login-forget-pass-text {
+      text-align: right;
+      cursor: pointer;
+    }
+
+    .login-button {
+      margin-top: 89px;
+
+      @media (max-width: $mobile-screen-breakpoint) {
+        margin-top: 44px;
+        align-self: center;
+      }
+    }
+
+    .go-to-login {
+      margin-top: 30px;
+      color: black;
+      cursor: pointer;
+      display: none;
+    }
+  }
+
+  .log-in-message-success {
+    color: green;
+  }
+
+  .log-in-message-failed {
+    min-height: 25px;
+    color: #941100;
+  }
+}
+
+.forget-password-content {
+  max-width: 1075px;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+
+  @media (max-width: $mobile-screen-breakpoint) {
+    display: block;
+    padding-bottom: 40px;
+  }
+
+  .left-content {
+    width: 50%;
+
+    .superscript {
+      font-size: 36px;
+      top: -90px;
+      left: 22px;
+    }
+  }
+
+  .right-content {
+    padding-left: 52px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 105px;
+    z-index: 1000;
+
+    @media (max-width: $mobile-screen-breakpoint) {
+      width: 100%;
+      margin-left: 0px;
+      max-width: 100%;
+      margin: auto;
+      margin-top: 330px;
+      margin-left: 0px;
+      padding-left: 0px;
+    }
+
+    @media (max-width: 750px) {
+      margin-top: 280px;
+    }
+
+    @media (max-width: 300px) {
+      margin-top: 175px;
+    }
+
+    .right-content-form {
+      max-width: 326px;
+
+      @media (max-width: $mobile-screen-breakpoint) {
+        margin: auto;
+        width: 326px;
+      }
+    }
+
+    .fgt-ps-text {
+      font-size: 48px;
+      margin-top: 35px;
+      margin-bottom: 30px;
+
+      @media (max-width: $mobile-screen-breakpoint) {
+        display: flex;
+        justify-content: center;
+        margin-top: 25px;
+        font-size: 40px;
+      }
+    }
+
+    .fgt-ps-message {
+      margin-bottom: 60px;
+
+      @media (max-width: $mobile-screen-breakpoint) {
+        margin-bottom: 30px;
+      }
+    }
+
+    #username {
+      margin-top: 12px;
+      margin-bottom: 32px;
+    }
+
+    .login-button {
+      margin-top: 103px;
+
+      @media (max-width: $mobile-screen-breakpoint) {
+        margin-top: 22px;
+      }
+    }
+
+    .go-to-login {
+      margin-top: 60px;
+      cursor: pointer;
+    }
+  }
+
+  .password-reset-mail-sent {
+    margin-top: 30px;
+    color: green;
+  }
+
+  .password-reset-mail-failed {
+    margin-top: 30px;
+    color: red;
+  }
+}

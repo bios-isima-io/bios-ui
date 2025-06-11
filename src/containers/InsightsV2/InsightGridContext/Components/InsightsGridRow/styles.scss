@@ -1,0 +1,124 @@
+@import 'app/styles/variable';
+
+.insights-row-container {
+  position: relative;
+  .row-header {
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .row-header-text {
+    margin-top: 10px;
+  }
+
+  .scroll-arrow:hover {
+    path {
+      stroke: black;
+    }
+  }
+
+  .insights-grid-row {
+    display: flex;
+    overflow-x: scroll;
+    max-width: 100vw;
+    padding-top: 24px;
+    padding-bottom: 30px;
+    padding-right: 3px;
+  }
+
+  @media (max-width: $isima-large-device-breakpoint) {
+    .insights-grid-row::-webkit-scrollbar {
+      -webkit-appearance: none;
+    }
+
+    .insights-grid-row::-webkit-scrollbar:horizontal {
+      height: 3px;
+    }
+
+    .insights-grid-row::-webkit-scrollbar-thumb {
+      border-radius: 8px;
+      border: 1px solid transparent;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  @media (min-width: $isima-large-device-breakpoint) {
+    .shuffle-button-container {
+      margin-right: 13px;
+    }
+  }
+  .insights-grid-row > div:last-child {
+    margin-right: 0px !important;
+  }
+
+  .no-data-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    .text {
+      font-size: 11px;
+      color: #3e3e3c;
+    }
+  }
+
+  .icon-EMPTY-STATE-1 .path1:before {
+    color: transparent;
+  }
+
+  .shuffle-button-container {
+    display: flex;
+    .shuffle-button-primary .ant-btn:focus {
+      background-color: black !important;
+      color: white !important;
+    }
+
+    .shuffle-button-secondary .ant-btn:focus {
+      background-color: white !important;
+      color: black !important;
+    }
+
+    .shuffle-button-secondary .ant-btn:hover {
+      background-color: white !important;
+      color: black !important;
+    }
+  }
+
+  .shuffle-icon-active {
+    color: white !important;
+  }
+  .shuffle-button {
+    color: black;
+  }
+  .shuffle-icon {
+    font-size: 24px;
+    color: black;
+    margin-top: 2px;
+  }
+
+  .ant-spin {
+    margin-top: 3px;
+  }
+
+  .smart-shuffle-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    background: #c4c4c4;
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    color: #ffffff;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 12px;
+  }
+}

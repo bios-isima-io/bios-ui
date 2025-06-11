@@ -1,0 +1,83 @@
+@import '/src/containers/Website/variable.scss';
+
+.left-section-text {
+  z-index: 10000000;
+  top: 458px;
+  position: absolute;
+  font-family: RotisSemiSans;
+  font-weight: bold;
+
+  @media (max-width: $mobile-screen-breakpoint) {
+    top: 90px;
+    left: 20%;
+  }
+
+  .first-line {
+    transform: rotate(-5.98deg);
+    color: #767676;
+    font-size: 36px;
+    font-family: PermanentMarker;
+    font-weight: normal;
+    margin-left: 16px;
+
+    @media (max-width: $mobile-screen-breakpoint) {
+      font-size: 16px;
+    }
+  }
+
+  .first-line::after {
+    content: 'V';
+    position: absolute;
+    top: 110px;
+    left: 60px;
+    transform: rotate(165deg);
+
+    @media (max-width: $mobile-screen-breakpoint) {
+      top: 55px;
+      left: 18px;
+    }
+  }
+
+  .second-line {
+    font-size: 62px;
+    display: flex;
+    margin-top: 10px;
+
+    @media (max-width: $mobile-screen-breakpoint) {
+      font-size: 28px;
+    }
+  }
+
+  .third-line {
+    font-size: 48px;
+    color: white;
+
+    @media (max-width: $mobile-screen-breakpoint) {
+      margin-top: 5px;
+      font-size: 23px;
+    }
+  }
+}
+
+@media (max-width: $ipad-screen-breakpoint) and (min-width: $mobile-screen-breakpoint) {
+  .left-section-text {
+    top: 380px;
+  }
+
+  .left-section-text .first-line {
+    font-size: 28px;
+  }
+
+  .left-section-text .first-line::after {
+    top: 90px;
+    left: 45px;
+  }
+
+  .left-section-text .second-line {
+    font-size: 48px;
+  }
+
+  .left-section-text .third-line {
+    font-size: 38px;
+  }
+}

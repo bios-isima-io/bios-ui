@@ -1,0 +1,18 @@
+@import "app/styles/variable";
+
+.user-profile-right-section{
+  @media (min-width: $isima-large-device-breakpoint){
+    .editable-page-title {
+      width: calc(100% - 100px) !important;
+    }
+  }
+  .password-strength-icon {
+    margin-right: 10px;
+  }
+  .password-strength-success::before {
+    color: #117f0d;
+  }
+  .password-strength-failure::before {
+    color: #d1cece
+  }
+}

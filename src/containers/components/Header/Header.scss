@@ -1,0 +1,67 @@
+@import "app/styles/variable";
+
+.page-header{
+  margin-top: 38px;
+  max-width: $isima-large-device-breakpoint;
+  .mobile-row-1{
+    height: 20px;
+  }
+  .desktop-row-2, .mobile-row-1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    >div {
+      &:nth-child(1){
+        width: calc(100% - 250px);
+      }
+      &:nth-child(2){
+        width: 250px;
+      }
+    }
+  }
+  .mobile-row-2{
+    margin-top: 40px;
+  }
+  &.right-panel{
+    .desktop-row-2, .mobile-row-1{
+      >div {
+        &:nth-child(1){
+          width: calc(100% - 10px);
+        }
+        &:nth-child(2){
+          width: 120px;
+        }
+      }
+    }
+    .desktop-row-2.w-190{
+      >div {
+        &:nth-child(1){
+          width: calc(100% - 190px);
+        }
+        &:nth-child(2){
+          width: 190px;
+        }
+      }
+    }
+  }
+  .desktop-row-2{
+    .title-text{
+      text-align: left;
+    }
+  }
+  .action-wrapper{
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .back-link{
+    padding-left: 35px;
+    color: #2B2826;
+    font-size: 12px;
+    margin-bottom: 4px;
+    cursor: pointer;
+    @media (min-width: $isima-large-device-breakpoint){
+      padding-left: 0px;
+    }
+  }
+}

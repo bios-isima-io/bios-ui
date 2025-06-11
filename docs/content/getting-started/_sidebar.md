@@ -1,0 +1,24 @@
+- Components
+  - [Scale-out SQL Friendly Database](/docs/content/getting-started/database.md)
+  - [Onboard, Process, and Operate Data](/docs/content/getting-started/zerocode.md)
+  - [Reference Data Apps](/docs/content/getting-started/reference-apps.md)
+- [Core Concepts](/docs/content/getting-started/concepts.md)
+  - [Storage Engines](/docs/content/getting-started/storage.md)
+    - [Signals](/docs/content/getting-started/signals.md)
+    - [Contexts](/docs/content/getting-started/contexts.md)
+  - [Polyglot Capabilities](/docs/content/getting-started/polyglot.md)
+  - [Query Languages](/docs/content/getting-started/languages.md)
+  - [Unique Characteristics](/docs/content/getting-started/unique.md)
+- Editions / Installation
+  - [bi(OS) Editions](/docs/content/getting-started/editions.md)
+  - [Install bi(OS) App On Smart Phones](/docs/content/getting-started/install-mobile.md)
+<!--
+  - [Signup](/docs/content/getting-started/signup.md)
+  - [SignIn](/docs/content/getting-started/signin.md)
+-->
+<!--
+- 10 minute tour
+  - [Create a Signal](/docs/content/getting-started/createsignal.md)
+  - [Load Data](/docs/content/getting-started/loaddata.md)
+  - [Insights](/docs/content/getting-started/insights.md)
+-->

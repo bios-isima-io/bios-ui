@@ -1,0 +1,137 @@
+@import 'app/styles/variable';
+
+.report-data-grid-container {
+  margin-top: 22px;
+  margin-bottom: 26px;
+}
+
+.report-data-grid {
+  margin-bottom: 26px;
+  .header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 27px;
+
+    .title {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .header-options {
+      width: 360px;
+      height: 38px;
+      display: flex;
+      justify-content: space-between;
+
+      .search-field {
+        width: 310px;
+      }
+
+      .datagrid-download-button {
+        .icon-wrapper {
+          cursor: pointer;
+          background: transparent;
+          padding: 8px;
+          border-radius: 50%;
+          .icon-download {
+            font-size: 20px !important;
+            margin-top: 16px;
+            font-weight: 700;
+          }
+          &:hover {
+            background: #dddddd;
+          }
+        }
+      }
+
+      .datagrid-download-button:focus {
+        outline: 0;
+      }
+    }
+  }
+
+  .ant-pagination-item {
+    border-radius: 4px;
+    background-color: #f5f6f7;
+  }
+
+  .ant-pagination-item a {
+    color: #000;
+    border: none;
+  }
+  .ant-pagination-item:focus {
+    border: 1px solid #e0e0e0;
+  }
+
+  :not(.ant-pagination-item-active).ant-pagination-item:hover {
+    border: 1px solid #e0e0e0;
+  }
+
+  .ant-pagination-item-active {
+    background-color: #000;
+    border: none;
+  }
+
+  .ant-pagination-item-active a {
+    color: #fff;
+    border: none;
+  }
+
+  .ant-pagination-item-link {
+    background-color: #f5f6f7;
+    border-radius: 4px;
+    &:hover {
+      border: 1px solid #e0e0e0;
+      color: #000;
+    }
+
+    .anticon {
+      vertical-align: 1px;
+    }
+  }
+  .ant-pagination-item-link:disabled {
+    color: #e6e5e5 !important;
+    &:hover {
+      color: #e6e5e5 !important;
+    }
+  }
+  .ant-table-ping-left:not(.ant-table-has-fix-left)
+    .ant-table-container::before {
+    box-shadow: none;
+  }
+
+  .ant-table-ping-right:not(.ant-table-has-fix-right)
+    .ant-table-container::after {
+    box-shadow: none;
+  }
+
+  .ant-table-thead > tr > th,
+  .ant-table-tbody > tr > td,
+  .ant-table tfoot > tr > th,
+  .ant-table tfoot > tr > td {
+    padding-left: 24px;
+  }
+}
+
+@media only screen and (max-width: $isima-large-device-breakpoint) {
+  .report-data-grid {
+    margin-top: 30px;
+    margin-bottom: 26px;
+    .header {
+      flex-direction: column;
+
+      .header-options {
+        width: 100%;
+
+        .search-field {
+          width: 100%;
+        }
+
+        .icon-download {
+          width: 40px;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}

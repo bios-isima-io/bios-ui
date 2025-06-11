@@ -1,0 +1,14 @@
+@import "app/styles/imports";
+.missing-value {
+  display: flex;
+  color: #011627;
+  flex-flow: row;
+
+  input {
+    max-width: 8rem;
+  }
+
+  >* {
+    margin-right: 1rem;
+  }
+}

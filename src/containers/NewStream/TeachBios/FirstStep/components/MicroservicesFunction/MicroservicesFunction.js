@@ -1,0 +1,270 @@
+/*
+ * Copyright (C) 2025 Isima, Inc.
+ *
+ * # PolyForm Free Trial License 1.0.0
+ *
+ * <https://polyformproject.org/licenses/free-trial/1.0.0>
+ *
+ * ## Acceptance
+ *
+ * In order to get any license under these terms, you must agree
+ * to them as both strict obligations and conditions to all
+ * your licenses.
+ *
+ * ## Copyright License
+ *
+ * The licensor grants you a copyright license for the software
+ * to do everything you might do with the software that would
+ * otherwise infringe the licensor's copyright in it for any
+ * permitted purpose.  However, you may only make changes or
+ * new works based on the software according to [Changes and New
+ * Works License](#changes-and-new-works-license), and you may
+ * not distribute copies of the software.
+ *
+ * ## Changes and New Works License
+ *
+ * The licensor grants you an additional copyright license to
+ * make changes and new works based on the software for any
+ * permitted purpose.
+ *
+ * ## Patent License
+ *
+ * The licensor grants you a patent license for the software that
+ * covers patent claims the licensor can license, or becomes able
+ * to license, that you would infringe by using the software.
+ *
+ * ## Fair Use
+ *
+ * You may have "fair use" rights for the software under the
+ * law. These terms do not limit them.
+ *
+ * ## Free Trial
+ *
+ * Use to evaluate whether the software suits a particular
+ * application for less than 32 consecutive calendar days, on
+ * behalf of you or your company, is use for a permitted purpose.
+ *
+ * ## No Other Rights
+ *
+ * These terms do not allow you to sublicense or transfer any of
+ * your licenses to anyone else, or prevent the licensor from
+ * granting licenses to anyone else.  These terms do not imply
+ * any other licenses.
+ *
+ * ## Patent Defense
+ *
+ * If you make any written claim that the software infringes or
+ * contributes to infringement of any patent, your patent license
+ * for the software granted under these terms ends immediately. If
+ * your company makes such a claim, your patent license ends
+ * immediately for work on behalf of your company.
+ *
+ * ## Violations
+ *
+ * If you violate any of these terms, or do anything with the
+ * software not covered by your licenses, all your licenses
+ * end immediately.
+ *
+ * ## No Liability
+ *
+ * ***As far as the law allows, the software comes as is, without
+ * any warranty or condition, and the licensor will not be liable
+ * to you for any damages arising out of these terms or the use
+ * or nature of the software, under any kind of legal claim.***
+ *
+ * ## Definitions
+ *
+ * The **licensor** is the individual or entity offering these
+ * terms, and the **software** is the software the licensor makes
+ * available under these terms.
+ *
+ * **You** refers to the individual or entity agreeing to these
+ * terms.
+ *
+ * **Your company** is any legal entity, sole proprietorship,
+ * or other kind of organization that you work for, plus all
+ * organizations that have control over, are under the control of,
+ * or are under common control with that organization.  **Control**
+ * means ownership of substantially all the assets of an entity,
+ * or the power to direct its management and policies by vote,
+ * contract, or otherwise.  Control can be direct or indirect.
+ *
+ * **Your licenses** are all the licenses granted to you for the
+ * software under these terms.
+ *
+ * **Use** means anything you do with the software requiring one
+ * of your licenses.
+ */
+import React, { useState } from 'react';
+import { css } from 'aphrodite';
+import { Dropdown, Menu, Tooltip } from 'antdlatest';
+import styles from './MicroservicesFunctionStyle';
+import SwitchWrapper from 'components/Switch';
+import { getServicesList } from '../../utils';
+import commonStyles from '../../../../../../app/styles/commonStyles';
+
+const SNAKE_CASE = 'snake_case';
+const CAMEL_CASE = 'camelCase';
+
+const getKeySeparatorString = (prependKeySeparator) => {
+  if (prependKeySeparator === '') {
+    return CAMEL_CASE;
+  } else if (prependKeySeparator === '_') {
+    return SNAKE_CASE;
+  }
+};
+
+const MicroservicesFunction = ({
+  selectedTab,
+  selectedType,
+  activeTransFormations,
+  setActiveTransFormations,
+  jsonValue = null,
+  hideStreamTypeSwitch = false,
+  updatePrependKeySeparator = () => {},
+  prependKeySeparator = '',
+}) => {
+  const [keySeparator, setKeySeparator] = useState(
+    getKeySeparatorString(prependKeySeparator),
+  );
+  const servicesList = getServicesList(selectedType, selectedTab, jsonValue);
+
+  return (
+    <div className={css(styles.wrapper)}>
+      <div className={css(styles.heading)}>
+        <div className={css(styles.headingText)}>Options</div>
+      </div>
+
+      <div className={css(styles.fnList)}>
+        {servicesList.map((item) => {
+          if (
+            selectedType === 'csv' &&
+            selectedTab === 'csv_file' &&
+            item.id === 1 &&
+            !activeTransFormations.includes(0)
+          ) {
+            return null;
+          }
+          // Hide PREFIX_NESTED_PROPERTY_LABEL and STRINGIFY_SCALAR_ARRAYS when
+          // Flattening JSON is disabled
+          if (
+            selectedType === 'json' &&
+            (item.id === 0 || item.id === 4) &&
+            !activeTransFormations.includes(1)
+          ) {
+            return null;
+          }
+
+          // Hide Switching option for changing Entities based on hideStreamTypeSwitch flag
+          if (hideStreamTypeSwitch && item.id === 11) {
+            return null;
+          }
+
+          if (
+            selectedType === 'json' &&
+            item.type === 'dropdown' &&
+            item.id === 13
+          ) {
+            const menu = (
+              <Menu
+                className={css(commonStyles.menuWrapper)}
+                key={`${item.label}_m`}
+                onClick={({ key }) => {
+                  if (key === 'empty') {
+                    updatePrependKeySeparator('');
+                    setKeySeparator(CAMEL_CASE);
+                  } else if (key === 'underscore') {
+                    updatePrependKeySeparator('_');
+                    setKeySeparator(SNAKE_CASE);
+                  }
+                }}
+              >
+                <Menu.Item key={'empty'}>camelCase</Menu.Item>
+                <Menu.Item key={'underscore'}>snake_case</Menu.Item>
+              </Menu>
+            );
+
+            return activeTransFormations.includes(0) ? (
+              <>
+                <div className={css(styles.fnItemText)} key={`${item.label}_i`}>
+                  {item.label}
+                  {item.toolTipText && (
+                    <Tooltip title={item.toolTipText}>
+                      <i className={`icon-Info ${css(styles.infoIcon)} `} />
+                    </Tooltip>
+                  )}
+                </div>
+                <Dropdown
+                  key={`${item.label}_i`}
+                  overlay={menu}
+                  trigger={['click']}
+                >
+                  <div
+                    style={{
+                      width: '130px',
+                      height: '38px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      border: '1px solid rgb(221, 221, 221)',
+                      background: 'transparent',
+                      borderRadius: '5px',
+                      padding: '0px 12px',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    <div>{keySeparator ? keySeparator : 'Select'}</div>
+                    <i className="icon-chevron-down" />
+                  </div>
+                </Dropdown>
+              </>
+            ) : null;
+          }
+
+          return (
+            <>
+              <div key={`${item.label}_l`} className={css(styles.fnItemText)}>
+                {item.label}
+                {item.toolTipText && (
+                  <Tooltip title={item.toolTipText}>
+                    <i className={`icon-Info ${css(styles.infoIcon)} `} />
+                  </Tooltip>
+                )}
+              </div>
+              <SwitchWrapper
+                key={`${item.label}_s`}
+                justifyContent={true}
+                checked={activeTransFormations.includes(item.id)}
+                onChange={(bool) => {
+                  if (bool) {
+                    setActiveTransFormations([
+                      ...activeTransFormations,
+                      item.id,
+                    ]);
+                  } else {
+                    // Handle prepend keys transformation dependency on Flatten JSON
+                    if (selectedType === 'json' && item.id === 1) {
+                      const updatedList = activeTransFormations.filter((id) => {
+                        return id !== 0 && id !== 1;
+                      });
+                      setActiveTransFormations(updatedList);
+                    } else {
+                      const updatedList = activeTransFormations.filter(
+                        (id) => id !== item.id,
+                      );
+                      setActiveTransFormations(updatedList);
+                    }
+                  }
+                }}
+                offLabel="NO"
+                onLabel="YES"
+              />
+            </>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+export default MicroservicesFunction;

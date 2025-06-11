@@ -1,0 +1,137 @@
+#!/usr/bin/env python3
+
+import sys
+import re
+import os
+import pprint
+
+from typing import List, Dict
+
+
+def usage(command: str):
+    """Print usage and exit with error status"""
+    basename = os.path.basename(command)
+    print(f"Usage: {basename} [options] <doc_file_md>")
+    print("options:")
+    print("  --renumber : Renumber the footnote tags")
+    sys.exit(1)
+
+
+def check_footnotes(infile_name: str) -> Dict[str, str]:
+    """Checks footnotes in the specified doc. Print reference errors.
+    Returns footnote tag mapping -- original tag to renumbered.
+    Widow tags will be renumbered to 'widow_N' where N is a sequence number
+    for widows"""
+
+    referrers = {}
+    references = {}
+    pattern_referrer = re.compile("(\\[\\^[0-9a-zA-Z_]+\\])")
+    pattern_reference = re.compile("^(\\[\\^[0-9a-zA-Z_]+\\])")
+    footnote_number = 1
+    error = False
+    with open(infile_name, "r", encoding="utf-8") as infile:
+        for line_index, line in enumerate(infile):
+            m_reference = pattern_reference.match(line)
+            line_number = line_index + 1
+            if m_reference:
+                print(f"reference: {m_reference[1]}: {line_number}")
+                references[m_reference[1]] = line_number
+            else:
+                m_referrer = pattern_referrer.findall(line)
+                if m_referrer:
+                    print(f"refererr: {m_referrer}")
+                    for tag in m_referrer:
+                        existing = referrers.get(tag)
+                        if not existing:
+                            referrers[tag] = (line_number, footnote_number)
+                            footnote_number += 1
+
+    tag_prev = 0
+    for tag, line in references.items():
+        try:
+            tag_number = int(tag.replace("[^", "").replace("]", ""))
+        except ValueError:
+            pass
+        if tag_number < tag_prev:
+            print(f"Footnote {tag} out of order (latest: [^{tag_prev}]) in line {line}")
+            error = True
+        tag_prev = tag_number
+
+    for key, (line, footnote_number) in referrers.items():
+        # referrers[key] = f"[^{index + 1}]"
+        try:
+            del references[key]
+        except KeyError:
+            print("Error: Footnote {key} is missing in line {line}", file=sys.stderr)
+            error = True
+        referrers[key] = footnote_number
+
+    for index, (key, line) in enumerate(references.items()):
+        print(f"Widow reference: {key} in line {line}", file=sys.stderr)
+        referrers[key] = f"[^widow_{index + 1}]"
+        error = True
+
+    return referrers, error
+
+
+def renumber_tags(infile_name, tag_mapping):
+    infile_bak = infile_name + ".bak"
+    os.rename(infile_name, infile_bak)
+    pattern_tag = re.compile("(\\[\\^[0-9a-zA-Z_]+\\])")
+    with (
+        open(infile_bak, "r", encoding="utf-8") as infile,
+        open(infile_name, "w", encoding="utf-8") as outfile,
+    ):
+        for line in infile:
+            tags = pattern_tag.findall(line) or []
+            current = line
+            for tag in tags:
+                # referrers[key] = f"[^{index + 1}]"
+                new_tag = f"[^___{tag_mapping[tag]}]"
+                current = current.replace(tag, new_tag)
+                # print(current, end="")
+            current = current.replace("[^___", "[^")
+            print(current, end="", file=outfile)
+
+
+def conclude(error: bool) -> int:
+    return 1 if error else 0
+
+
+def main(argv: List[str]) -> int:
+    if len(argv) == 1:
+        usage(argv[0])
+    iarg = 1
+    renumber = False
+    while iarg < len(argv) and argv[iarg].startswith("-"):
+        if argv[iarg] != "--renumber":
+            usage(argv[0])
+        renumber = True
+        iarg += 1
+    if len(argv[iarg:]) == 0:
+        usage(argv[0])
+    infile_name = argv[iarg]
+
+    tag_mapping, error = check_footnotes(infile_name)
+
+    # for item in tag_mapping.items():
+    #     print(item)
+
+    if not renumber:
+        if error:
+            print("error")
+        else:
+            print("ok")
+        return conclude(error)
+
+    if error:
+        print("error -- renumbering skipped")
+        return conclude(error)
+
+    renumber_tags(infile_name, tag_mapping)
+    print("renumbered.")
+    return conclude(error)
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv))

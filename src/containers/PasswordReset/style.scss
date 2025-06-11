@@ -1,0 +1,67 @@
+@import "app/styles/imports";
+.password-reset-page {
+  .page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+
+    span {
+      &.page-item {
+        display: flex;
+        flex-flow: row;
+        width: 16rem;
+        align-items: center;
+        position: relative;
+
+        a {
+          width: 12rem;
+          margin: 0 1rem;
+          position: absolute;
+          left: 16rem;
+        }
+
+        .error {
+          visibility: visible;
+          margin: 0 1rem;
+          position: absolute;
+          left: 16rem;
+        }
+
+        .no-error {
+          visibility: hidden;
+          margin: 0 1rem;
+          position: absolute;
+          left: 16rem;
+        }
+      }
+    }
+
+    .page-item {
+      margin: .6rem 0;
+
+      &.invalid {
+        background-color: rgba($error-color, .6);
+        color: $white;
+
+        &::placeholder { /* Firefox, Chrome, Opera */
+          color: $white;
+        }
+      }
+
+      &.logo {
+        margin-bottom: 4rem;
+      }
+
+      &.hr {
+        height: 1px;
+        color: $isima-grey-1;
+        background-color: $isima-grey-1;
+        border: none;
+        opacity: .4;
+        min-width: 16rem;
+      }
+    }
+  }
+}

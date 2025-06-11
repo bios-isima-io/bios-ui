@@ -1,0 +1,8 @@
+- [Trino Client Setup](/docs/content/sql-compatibility/trino-client.md)
+- [Concepts](/docs/content/sql-compatibility/concepts.md)
+- [Signals](/docs/content/sql-compatibility/signals.md)
+- [Raw Signals](/docs/content/sql-compatibility/raw-signals.md)
+- [Signal Sketches](/docs/content/sql-compatibility/signal-sketches.md)
+- [Contexts](/docs/content/sql-compatibility/contexts.md)
+- [Raw Contexts](/docs/content/sql-compatibility/raw-contexts.md)
+- [Context Sketches](/docs/content/sql-compatibility/context-sketches.md)

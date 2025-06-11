@@ -1,0 +1,16 @@
+@import "app/styles/imports";
+
+.advanced-config-button {
+  font-size: 2rem !important;
+
+  > span {
+    position: relative;
+    top: -.5rem;
+  }
+}
+.advanced-collapse-title {
+  .active-items {
+    color: $isima-grey-1;
+    padding: 0 1rem;
+  }
+}

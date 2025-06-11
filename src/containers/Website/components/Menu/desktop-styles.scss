@@ -1,0 +1,79 @@
+@import '/src/containers/Website/variable.scss';
+
+.desktop-menu-container {
+  height: 90px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+
+  .google-cloud-header-logo {
+    width: 130px;
+    margin-top: 10px;
+  }
+
+  .menu-right {
+    display: flex;
+    column-gap: 32px;
+    @media screen and (min-width: $mobile-screen-breakpoint) and (max-width: $ipad-screen-breakpoint) {
+      margin-top: 1px;
+    }
+
+    .menu-navigation {
+      display: flex;
+      align-items: center;
+
+      .menu-item-active.menu-item {
+        a {
+          color: #941100;
+        }
+      }
+
+      .menu-item {
+        padding: 13px 20px;
+
+        @media screen and (min-width: $mobile-screen-breakpoint) and (max-width: $ipad-screen-breakpoint) {
+          font-size: 12px;
+          padding-left: 8px;
+          padding-right: 8px;
+        }
+
+        a {
+          color: black;
+        }
+
+        a:hover {
+          color: #941100;
+        }
+      }
+    }
+  }
+}
+
+.menu {
+  position: fixed;
+  // box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  z-index: 30;
+  background-color: transparent;
+  padding: 0px 20px;
+  font-family: Outfit;
+}
+
+.logo-wrapper {
+  display: flex;
+}
+
+.logo {
+  height: 50px;
+  position: relative;
+  left: -8px;
+}
+
+@media screen and (min-width: 1350px) {
+  .desktop-menu-container {
+    max-width: 1280px;
+    padding: 20px 0px;
+  }
+}

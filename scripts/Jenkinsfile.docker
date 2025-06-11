@@ -1,0 +1,31 @@
+#!groovy
+ORIG_WORKSPACE = ''
+
+def buildUIDocker() {
+    sh """#!/bin/bash
+          set -x
+          export BIOS_VERSION=${BIOS_VERSION} 
+          export BIOS_UI_VERSION=${BIOS_UI_VERSION} 
+          export UI_SRC_DIR=${WORKSPACE}
+          export UI_WORKSPACE=${WORKSPACE}
+          export UI_BRANCH=${WORKING_BRANCH}
+          source scripts/ui-build.sh 
+          build_ui_docker
+       """
+}
+
+pipeline {
+    agent any
+    options {
+        timestamps()
+    }
+    stages {
+        stage('Build UI Docker') {
+            steps {
+                script {
+                    buildUIDocker()
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+@import "app/styles/imports";
+.post-signup-page {
+  .content {
+
+    span {
+      &.page-item {
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+
+        button {
+          margin: 1rem .5rem;
+        }
+      }
+    }
+
+    .page-item {
+      margin: .6rem 0;
+    }
+  }
+}

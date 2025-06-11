@@ -1,0 +1,88 @@
+$black-dark: #2B2826;
+
+.editable-onclick-input {
+  color: $black-dark;
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+	height: 32px;
+	width: 100%;
+  input{
+		height: 32px;
+		width: 100% !important;
+		padding: 6px;
+		border-radius: 4px;	
+		font-size: 10px !important;
+		font-weight: 400;
+		color: #706E6B;
+  }
+  > .input-text {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+		overflow-x: hidden;
+		height: 32px;
+		background-color: #fff;
+		padding: 5px 6px;
+		padding-top: 9px;
+		margin-left: 1px;
+		border-radius: 4px;	
+		text-overflow: ellipsis; 
+		white-space: nowrap;
+		overflow: hidden;
+		font-size: 10px;
+		font-weight: 400;
+		color: #706E6B;
+    &.invalid-input{
+      border: 1px solid red;
+    }
+  }
+  svg{
+    margin-left: 20px;
+  }
+  .invalid-value{
+    border-color: red !important;
+  }
+}
+
+
+.editable-onclick-input {
+	height: 32px !important;
+	width: 100%;
+
+	.title-text {
+		height: 32px;
+		padding: 8px 12px;
+		border-radius: 4px;	
+		text-overflow: ellipsis; 
+		white-space: nowrap;
+		overflow: hidden;
+		font-size: 10px;
+		font-weight: 400;
+		color: black;
+		border: 1px solid #DDDDDD;
+	}
+
+	input {
+		height: 32px !important;
+		width: 100% !important;
+		padding: 8px 12px;
+		border-radius: 4px;	
+		font-size: 10px !important;
+		font-weight: 400;
+		color: #000;
+		background-color: #fff !important;
+	}
+
+	.editable-text {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.icon-edit {
+		font-size: 20px;
+		padding-top: 6px;
+		margin-left: 10px;
+		cursor: pointer;
+	}
+}
+

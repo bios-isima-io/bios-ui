@@ -1,0 +1,99 @@
+@import '/src/containers/Website/variable.scss';
+
+.mobile-menu-container {
+  width: 100%;
+  height: 55px;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  background-color: #0b0b0b;
+
+  .menu-navigation {
+    margin-right: 15px;
+  }
+
+  .menu-right {
+    display: flex;
+  }
+
+  .hamburger-menu {
+    margin-top: 10px;
+    margin-left: 18px;
+    margin-right: 4px;
+    cursor: pointer;
+  }
+
+  .menu-signup-button {
+    padding: 7px 30px 8px 30px;
+    height: 39px;
+    font-size: 18px;
+    font-weight: 400;
+    .header {
+      padding-top: 2px;
+      font-size: 12px;
+      position: relative;
+      top: 2px;
+    }
+  }
+
+  .logo {
+    width: 120px;
+    height: 35px;
+    margin-top: 0px;
+    margin-left: 0px;
+    text-align: center;
+    position: relative;
+    left: -17px;
+  }
+
+  .gcloud-logo {
+    position: relative;
+    left: -27px;
+    height: 22px;
+    margin-top: 10px;
+  }
+}
+
+.menu {
+  padding: 0px;
+  @media (max-width: $mobile-screen-breakpoint) {
+    background-color: black;
+    z-index: 100000000;
+  }
+}
+
+.popup-menu {
+  position: fixed;
+  top: 56px;
+  width: 100%;
+  z-index: 100000000;
+  font-size: 13px;
+  font-weight: 400;
+  background-color: #1d1d1d;
+  color: #fff;
+
+  a {
+    color: #fff;
+  }
+
+  .menu-item {
+    padding: 10px 20px;
+    font-family: Outfit;
+    font-size: 14px;
+    height: 37.5px;
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-item-active {
+    background-color: #3f444b;
+  }
+
+  .menu-item:hover {
+    background-color: #3f444b;
+    cursor: pointer;
+  }
+}

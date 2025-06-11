@@ -1,0 +1,372 @@
+@import "variable";
+@import "bios-custom-scroll";
+@import "button-pulse";
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*[class^="esl-"], *[id^="esl-"] {
+  font-family: RotisSemiSansStd !important;
+}
+#root,body {
+  background: $app-background-color;
+  background-size: 8px 8px;
+  min-height: 100%;
+  min-width: 375px;
+}
+.center-position{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.text-sm{
+  font-size: 9px;
+}
+
+.fade-enter {
+  opacity: 0;
+  animation-duration: .5s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+  animation-play-state: paused;
+}
+
+.fade-appear {
+  opacity: 0;
+  animation-duration: .5s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+  animation-play-state: paused;
+}
+
+.fade-leave {
+  animation-duration: .5s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+  animation-play-state: paused;
+}
+
+.fade-enter.fade-enter-active {
+  animation-name: fadeIn;
+  animation-play-state: running;
+}
+
+.fade-appear.fade-appear-active {
+  animation-name: fadeIn;
+  animation-play-state: running;
+}
+
+.fade-leave.fade-leave-active {
+  animation-name: fadeOut;
+  animation-play-state: running;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.ant-tabs {
+  .ant-tabs-top-content {
+    &.ant-tabs-content-animated {
+      transition: none !important;
+    }
+  }
+}
+
+input.error {
+  border: 1px solid $isima-red-btn-color;
+  color: $black;
+
+  &::placeholder { /* Firefox, Chrome, Opera */
+    color: $black;
+  }
+}
+
+.error {
+  > input {
+    border: 1px solid $isima-red-btn-color;
+    color: $black;
+
+    &::placeholder { /* Firefox, Chrome, Opera */
+      color: $black;
+    }
+  }
+}
+
+.ant-modal-body {
+  padding: 2rem !important;
+  background: $white !important;
+
+  .ant-modal-confirm-body-wrapper {
+
+    .ant-modal-confirm-body {
+      .anticon.anticon-question-circle {
+        color: $isima-grey-1 !important;
+        top: 2px;
+        position: relative;
+      }
+    }
+  }
+
+  .ant-modal-confirm-content {
+    margin: 1rem 0 1rem 2.4rem !important;
+  }
+}
+
+.ant-modal-header {
+  padding: 1rem 2rem !important;
+  background-color: #f0f0f0 !important;
+}
+
+.ant-modal-footer {
+  padding: 1rem 2rem !important;
+  background: $white !important;
+}
+
+.ant-modal-close {
+  right: 1rem !important;
+  color: $black !important;
+  top: -.2rem !important;
+}
+
+.ant-select-arrow {
+  color: black !important;
+}
+
+h4 {
+  margin-bottom: 0 !important;
+}
+
+//.ant-radio {
+//  top: -2px;
+//}
+
+.ant-tooltip {
+  .ant-tooltip-content {
+    border-radius: 4px;
+
+    .ant-tooltip-arrow {
+      color:#000;
+    }
+
+    .ant-tooltip-inner {
+      padding: 1rem;
+			background: #000;
+			text-align: center;
+    }
+  }
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: black !important;
+  border-color: black !important;
+}
+.ant-checkbox-wrapper:hover .ant-checkbox-inner,
+.ant-checkbox:hover .ant-checkbox-inner,
+.ant-checkbox-input:focus + .ant-checkbox-inner,
+.ant-checkbox-checked::after {
+  border-color: black !important;
+}
+
+.ant-dropdown-menu {
+  background: #F5F6F7;
+  border-radius: $isima-std-border-radius;
+  border : 1px solid rgb(221, 221, 221);
+  max-height: 300px;
+  overflow-y: auto;
+  box-shadow: none;
+}
+.ant-dropdown-menu-item:hover, .ant-dropdown-menu-submenu-title:hover{
+  background: #FFFFFF;
+}
+
+.ant-table-body {
+  background-color: transparent !important;
+}
+
+footer {
+  width: 100%;
+  display: flex !important;
+  align-items: center !important;
+  font-family: 'Helvetica', serif;
+  font-weight: 300;
+  font-size: 10px;
+  color: #706E6B;
+  padding: 1rem 0;
+  background-color: white;
+  position: relative;
+  bottom: 0;
+}
+// date time picker antd stypes
+.time-picker-container {
+	.time-picker:hover {
+		border: 1px solid #E0E0E0 !important;
+		box-shadow: none !important;
+	}
+
+	.ant-picker-focused {
+		border: 1px solid #E0E0E0 !important;
+		box-shadow: none !important;
+	}
+
+		.ant-picker-dropdown {
+			.ant-picker-panel {
+				background-color: #F5F6F7 !important;
+
+			}
+
+		.ant-picker-time-panel-cell-selected {
+			.ant-picker-time-panel-cell-inner {
+				background-color: #fff;
+			}
+		}
+
+		.ant-picker-time-panel-cell {
+			.ant-picker-time-panel-cell-inner:hover {
+				background-color: #fff;
+			}
+		}
+
+		.ant-picker-ok {
+			.ant-btn {
+				background-color: #2b2826;
+				border: none;
+				border-radius: 4px;
+			}
+		}
+	}
+}
+
+//radio button on
+//.ant-switch{
+//  background-color: #2B2826;
+//}
+.ant-switch-checked {
+	background-color: #393939;
+}
+
+//spin color
+.ant-spin-dot-item {
+	background-color: #999;
+}
+
+//Radio
+.ant-radio-checked {
+  .ant-radio-inner{
+    border-color: #2b2826 !important;
+  }
+  .ant-radio-inner::after{
+    background: #2b2826 !important;
+  }
+}
+
+.ant-dropdown {
+	z-index: 10000;
+}
+
+.ant-select-dropdown {
+	font-family: Poppins;
+	z-index: 10000;
+	.ant-select-item {
+		font-size: 12px;
+	}
+
+	.ant-select-tree-title {
+		font-size: 12px !important;
+	}
+}
+
+.ant-select-selector {
+	font-size: 12px;
+}
+
+.ant-collapse-borderless > .ant-collapse-item:last-child, .ant-collapse-borderless > .ant-collapse-item:last-child .ant-collapse-header {
+	border-radius: 6px;
+}
+
+//Pulsating circle
+.ring-container {
+  position: relative;
+}
+
+.circle {
+  width: 15px;
+  height: 15px;
+  background-color: #94bc8c;
+  border-radius: 50%;
+  position: relative;
+}
+
+.ringring {
+  border: 3px solid #94bc8c;
+  -webkit-border-radius: 20px;
+  height: 23px;
+  width: 23px;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  -webkit-animation: pulsate 1.5s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  opacity: 0.0
+}
+
+.extreme_high_errors {
+  background-color: #bd1919;
+  border: 3px solid #bd1919;
+}
+
+.high_errors {
+  background-color: #ff7300;
+  border: 3px solid #ff7300;
+}
+
+.medium_errors {
+  background-color: #ffc800;
+  border: 3px solid #ffc800;
+}
+
+.low_errors {
+  background-color:#94bc8c;
+  border: 3px solid #94bc8c;
+}
+
+@keyframes pulsate {
+  0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+  50% {opacity: 1.0;}
+  100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+}
+
+.upload-csv-data{
+  display: flex;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+#jsd-widget {
+  display: none;
+}
+
+.show-jsd-widget {
+  display: block !important;
+}

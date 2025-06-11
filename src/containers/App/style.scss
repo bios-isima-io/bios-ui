@@ -1,0 +1,58 @@
+@import "app/styles/imports";
+@import "app/styles/variable";
+
+@keyframes nav-expand {
+  from {padding-left: 4rem}
+  to {padding-left: 192px}
+}
+
+@keyframes nav-compress {
+  from {padding-left: 192px}
+  to {padding-left: 4rem}
+}
+
+.app-wrapper {
+  .page-wrapper {
+    background: $app-background-color;
+    width: 100%;
+    padding: 0 0 0 0rem;
+    flex-direction: column;
+    animation-name: nav-compress;
+    animation-duration: 1s;
+    //@media (min-width: $isima-large-device-breakpoint){
+    //  padding: 0 0 0 4rem;
+    //}
+
+    //&.extra-margin{
+    //  animation-name: nav-expand;
+    //  animation-duration: 0.75s;
+    //  padding-left: 192px;
+    //}
+
+    .page{
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0 55px;
+
+      &.center-page {
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+      }
+    }
+  }
+}
+
+.ant-tabs {
+
+  .ant-tabs-bar {
+    padding-left: 1rem;
+    width: min-content;
+    border-bottom-width: 2px;
+  }
+}
+
+.ant-select-selection__placeholder {
+  color: $black !important;
+}

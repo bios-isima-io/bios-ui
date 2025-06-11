@@ -1,0 +1,31 @@
+.bios-custom-scroll, .bios-custom-table .ant-table-body{
+  &::-webkit-scrollbar {
+    background: transparent;
+    height: 8px;
+    width: 8px
+  }
+
+  &::-webkit-scrollbar-track {
+    margin: 3px 0
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: none;
+    box-shadow: none;
+    background: #dadce0;
+    border-radius: 4px;
+    min-height: 40px
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background: #bdc1c6
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #bdc1c6
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background: #9aa0a6
+  }
+}

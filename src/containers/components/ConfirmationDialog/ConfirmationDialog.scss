@@ -1,0 +1,28 @@
+.confirmation-modal{
+  z-index: 90000;
+  .ant-modal-close, .ant-modal-footer{
+    display: none;
+  }
+  .ant-modal-body{
+    padding: 0px !important;
+    border-radius: 10px;
+  }
+  .ant-modal-content{
+    border-radius: 10px;
+  }
+  &.error{
+    i:before{
+      color: #D4000B;
+    }
+  }
+  &.success{
+    i:before{
+      color: #408220;
+    }
+  }
+  &.info{
+    i:before{
+      color: #FAAD14;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@import "app/styles/imports";
+.timerange {
+  .ant-slider {
+    line-height: 2.5rem;
+    top: -5px;
+    .ant-slider-mark-text {
+      color: $black;
+    }
+  }
+}

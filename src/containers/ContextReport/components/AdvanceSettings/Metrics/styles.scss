@@ -1,0 +1,81 @@
+@import 'app/styles/variable';
+$section-header-text-color: black;
+$items-border-color: #a6a6a6;
+$background-color: #fff;
+.metric-item-container {
+  .options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 23px 0px;
+    .chart-type {
+      display: flex;
+      flex-direction: row;
+
+      .ant-radio-group,
+      .ant-radio-button-wrapper {
+        height: 26px !important;
+      }
+
+      .ant-radio-button-wrapper {
+        padding: 1px !important;
+      }
+
+      .ant-radio-button-wrapper-disabled {
+        background: #dddbda !important;
+      }
+
+      .chart-type-title {
+        margin-top: 7px;
+        font-size: 12px;
+        color: $section-header-text-color;
+        min-width: 86px;
+      }
+
+      .ant-radio-button-wrapper {
+        background-color: unset;
+        border-color: transparent;
+        box-shadow: none;
+        padding: 4px !important;
+        margin-right: 15px;
+      }
+
+      .ant-radio-button-wrapper:not(
+          .ant-radio-button-wrapper-disabled
+        )::before {
+        background-color: unset;
+      }
+
+      .ant-radio-button-checked {
+        background-color: #393939;
+        border: 1px solid $items-border-color;
+        border-radius: 2px;
+      }
+
+      .ant-radio-button-wrapper-checked {
+        .icon-line-chart-1:before {
+          color: white;
+        }
+        .icon-bar-chart-1:before {
+          color: white;
+        }
+        .icon-area-chart-1:before {
+          color: white;
+        }
+        .icon-bubble-plot:before {
+          color: white;
+        }
+      }
+
+      .chart-icon {
+        position: relative;
+        font-size: 18px;
+        top: -3px;
+      }
+
+      .bubble-icon {
+        font-weight: 600;
+      }
+    }
+  }
+}

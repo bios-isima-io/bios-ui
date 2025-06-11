@@ -1,0 +1,14 @@
+@import 'app/styles/variable';
+
+@media only screen and (min-width: $isima-large-device-breakpoint) {
+  .groupby-x {
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: $isima-large-device-breakpoint) {
+  .groupby-x-select {
+    right: 20px !important;
+    left: unset !important;
+  }
+}

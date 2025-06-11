@@ -1,0 +1,175 @@
+@import 'app/styles/variable';
+$dropdown-background-color: #fff;
+
+.context-report-container {
+  .report-detail-dropdown-wrapper {
+    padding-bottom: 10px;
+  }
+
+  .context-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  .report-header {
+    margin-bottom: 50px;
+    @media (max-width: $isima-large-device-breakpoint) {
+      margin-bottom: 30px;
+    }
+  }
+  .icon {
+    font-size: 20px;
+    margin-left: 17px;
+    cursor: pointer;
+  }
+  .icon-clone-custom {
+    position: relative;
+    top: 2px;
+    font-size: 22px;
+    margin-left: 12px;
+    cursor: pointer;
+  }
+  .icon-File-custom {
+    margin-left: 17px;
+    font-size: 23px;
+    position: relative;
+    top: 2px;
+    cursor: pointer;
+  }
+  .icon-trash-custom {
+    margin-left: 15px;
+    font-size: 22px;
+    position: relative;
+    top: 2px;
+    cursor: pointer;
+  }
+  .icon-inviteuser {
+    position: relative;
+    top: 2px;
+  }
+  .icon-inviteuser::before {
+    color: #474e5d;
+  }
+  .report-invite-user-button {
+    margin-left: 16px;
+  }
+
+  .icon-disabled:before {
+    color: #dddbda !important;
+    cursor: not-allowed;
+  }
+
+  .select-container {
+    .icon-chevron-down {
+      font-size: 16px;
+    }
+
+    .icon-chevron-down:before {
+      color: #706e6b;
+    }
+
+    .ant-select-arrow {
+      margin-top: -8px;
+      margin-right: 2px;
+    }
+    .ant-select-selector {
+      background: $dropdown-background-color !important;
+      border-radius: 5px !important;
+      line-height: 32px;
+    }
+
+    .ant-select-selection-placeholder {
+      line-height: 32px !important;
+      overflow: unset !important;
+      animation: 1s fadeIn;
+      margin-top: 0px;
+      top: 0;
+      font-size: 12px !important;
+      font-style: italic !important;
+    }
+  }
+}
+
+// ant select dropdown styles
+.select-dropdown {
+  background: #f5f6f7;
+  box-shadow: none !important;
+  .rc-virtual-list-holder {
+    border: 1px solid #dddddd;
+  }
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+    background-color: #fff !important;
+  }
+  .ant-select-item {
+    &:hover {
+      background-color: #ffffff;
+    }
+  }
+  .ant-select-selection-item {
+    color: #878787;
+  }
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 500;
+  }
+}
+// end ant select dropdown styles
+
+.ant-select-selector {
+  background: $dropdown-background-color !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 5px !important;
+  line-height: 32px;
+}
+
+.report-page-modal {
+  .ant-input {
+    background-color: #fff !important;
+  }
+  .ant-modal-body {
+    background-color: #f5f6f7 !important;
+  }
+
+  .ant-btn.ant-btn-primary {
+    background-color: black;
+    border-color: black;
+    color: #fff;
+  }
+
+  .ant-btn {
+    border-radius: 5px;
+    font-family: 'Poppins';
+    font-size: 11px;
+    background-color: #fff;
+    color: #706e6b;
+  }
+
+  .ant-btn.ant-btn-primary:hover {
+    color: white;
+  }
+
+  .ant-btn:hover {
+    border-color: black;
+    color: black;
+  }
+
+  .ant-btn-dangerous {
+    color: white;
+    background: #ff4d4f;
+    border-color: #ff4d4f;
+  }
+  .ant-btn.ant-btn-dangerous:hover {
+    color: white;
+    background: #ff4d4f;
+    border-color: #c91c1f;
+  }
+}
+
+.save-as-modal {
+  .new-report-name-icon {
+    width: 40px;
+    float: left;
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,203 @@
+@import "app/styles/variable";
+
+.listing-wrapper {
+  background: #FFFFFF;
+  margin-top: 25px;
+
+  .header-list {
+    display: grid;
+    align-items: center;
+    box-sizing: border-box;
+    //height: 50px;
+    padding: 12px;
+    color: #ADADAD;
+    font-weight: normal;
+    font-size: 12px;
+    text-align: center;
+
+    .header-item {
+      display: flex;
+      justify-content: center;
+    }
+
+    .header-item:first-child {
+      display: flex;
+      justify-content: left;
+    }
+
+    &.sixColumn {
+      grid-template-columns: auto 60px 60px 60px 65px 40px;
+      grid-gap: 8px;
+
+      @media (min-width: $isima-large-device-breakpoint) {
+        grid-template-columns: auto 90px 90px 90px 90px 90px;
+        grid-gap: 15px;
+      }
+    }
+
+    &.fiveColumn {
+      grid-template-columns: auto 60px 60px 65px 40px;
+      grid-gap: 8px;
+
+      @media (min-width: $isima-large-device-breakpoint) {
+        grid-template-columns: auto 90px 90px 90px 90px;
+        grid-gap: 15px;
+      }
+    }
+
+    &.fourColumn {
+      grid-template-columns: auto 60px 65px 40px;
+      grid-gap: 8px;
+
+      @media (min-width: $isima-large-device-breakpoint) {
+        grid-template-columns: auto 90px 90px 90px;
+        grid-gap: 15px;
+      }
+    }
+
+    &.threeColumn {
+      grid-template-columns: auto 65px 65px;
+      grid-gap: 15px;
+
+      @media (min-width: $isima-large-device-breakpoint) {
+        grid-template-columns: auto 90px 90px;
+        grid-gap: 15px;
+      }
+    }
+
+    &.singleColumn {
+      grid-template-columns: auto;
+    }
+
+    >div:first-child {
+      text-align: left;
+    }
+  }
+
+  .content-list-wrapper {
+
+    //max-height: 500px;
+    //overflow-y: auto;
+    .no-matched {
+      text-align: center;
+      margin-top: 100px;
+      color: #666;
+    }
+  }
+
+  .list-item:hover+.list-item {
+    border-top: 1px solid transparent;
+  }
+
+  .list-item {
+    display: grid;
+    align-items: center;
+    box-sizing: border-box;
+    height: 74px;
+    border-top: 1px solid #E0E0E0;
+    padding: 12px;
+    font-weight: 500;
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer;
+
+    &.sixColumn {
+      grid-template-columns: auto 60px 60px 60px 65px 40px;
+      grid-gap: 8px;
+
+      @media (min-width: $isima-large-device-breakpoint) {
+        grid-template-columns: auto 90px 90px 90px 90px 90px;
+        grid-gap: 15px;
+      }
+    }
+
+    &.fiveColumn {
+      grid-template-columns: auto 60px 60px 65px 40px;
+      grid-gap: 8px;
+
+      @media (min-width: $isima-large-device-breakpoint) {
+        grid-template-columns: auto 90px 90px 90px 90px;
+        grid-gap: 15px;
+      }
+    }
+
+    &.fourColumn {
+      grid-template-columns: auto 60px 65px 40px;
+      grid-gap: 8px;
+
+      @media (min-width: $isima-large-device-breakpoint) {
+        grid-template-columns: auto 90px 90px 90px;
+        grid-gap: 15px;
+      }
+    }
+
+    &.threeColumn {
+      grid-template-columns: auto 65px 65px;
+      grid-gap: 8px;
+
+      @media (min-width: $isima-large-device-breakpoint) {
+        grid-template-columns: auto 90px 90px;
+        grid-gap: 15px;
+      }
+    }
+
+    &.singleColumn {
+      grid-template-columns: auto;
+    }
+
+    &.active {
+      border-radius: 5px;
+      background: #DEDEDE;
+    }
+
+    &:hover {
+      border-radius: 5px;
+      background: #c7c7c7;
+    }
+
+    .label {
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: #2B2826;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .up {
+      color: #8CB780;
+    }
+
+    .down {
+      color: #D05128;
+    }
+
+    .neutral {
+      color: #ADADAD;
+    }
+  }
+
+  .icon-fat-minimise:hover {
+    border: 1px solid #FFFFFF !important;
+  }
+
+  .icon-fat-expand:hover {
+    border: 1px solid #FFFFFF !important;
+  }
+
+  .pdl-68 {
+    padding-left: 68px;
+  }
+
+  .pdl-88 {
+    padding-left: 88px;
+  }
+}
+
+.primary-metrics-tooltip {
+  .ant-tooltip-inner {
+    padding: 8px !important;
+    font-size: 12px;
+  }
+}

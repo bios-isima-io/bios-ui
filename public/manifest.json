@@ -1,0 +1,115 @@
+{
+  "short_name": "bi(OS)",
+  "name": "bi(OS):ISIMA",
+  "icons": [{
+    "src": "favicon-16x16.png",
+    "type": "image/png",
+    "sizes": "16x16"
+  },
+    {
+      "src": "favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "isimaLogo_72x72_android.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "isimaLogo_96x96_android.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "isimaLogo_120x120_ios.png",
+      "type": "image/png",
+      "sizes": "120x120"
+    },
+    {
+      "src": "isimaLogo_128x128_android.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "isimaLogo_144x144_android.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "isimaLogo_144x144_android.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "isimaLogo_152x152_android.png",
+      "type": "image/png",
+      "sizes": "152x152"
+    },
+    {
+      "src": "isimaLogo_180x180_ios.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "isimaLogo_192x192_android.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "isimaLogo_384x384_android.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "isimaLogo_512x512_android.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "maskable_icon.png",
+      "sizes": "190x190",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/Frame 1.png",
+      "type": "image/png",
+      "sizes": "540x720"
+    },
+    {
+      "src": "screenshots/Frame 2.png",
+      "type": "image/png",
+      "sizes": "540x720"
+    },
+    {
+      "src": "screenshots/Frame 3.png",
+      "type": "image/png",
+      "sizes": "540x720"
+    },
+    {
+      "src": "screenshots/Frame 4.png",
+      "type": "image/png",
+      "sizes": "540x720"
+    },
+    {
+      "src": "screenshots/Frame 5.png",
+      "type": "image/png",
+      "sizes": "540x720"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "android_package_name": "io.isima.bios.twa",
+  "url": "https://bios.isima.io",
+  "manifestUrl": "https://bios.isima.io/manifest.json",
+  "lang": "English",
+  "orientation": "any",
+  "description": "AIops, Mlops, Data Analytics Companies, Data Analytics and Visualization, Advanced Data Analytics, Marketing Data Analytics, Analytics Companies, Data Analytics Strategy",
+  "scope": "/",
+  "categories": ["business"]
+}

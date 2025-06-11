@@ -1,0 +1,104 @@
+@import 'app/styles/variable';
+
+.multi-select {
+  max-width: 100%;
+  .dropdown[aria-expanded='true'] {
+    .dropdown-heading {
+      border: 1px solid #e9e9e9 !important;
+      display: flex !important ;
+    }
+  }
+
+  .dropdown-heading-loading-container {
+    padding-top: 7px;
+  }
+
+  .dropdown-heading {
+    padding-right: 3px;
+    max-width: 100% !important;
+    background-color: transparent !important;
+    border: 1px solid #e9e9e9 !important;
+    display: flex !important ;
+  }
+
+  .dropdown-content {
+    right: 0;
+    border: 1px solid #e9e9e9 !important;
+  }
+
+  .dropdown-heading-value {
+    padding-right: 0px !important;
+    padding-left: 12px !important;
+    width: 100%;
+  }
+
+  .placeholder-custom {
+    font-style: italic;
+    font-size: 12px;
+    color: #878787;
+  }
+
+  .dropdown-heading-dropdown-arrow {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23706E6B' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    span {
+      display: none !important;
+    }
+  }
+
+  .select-panel {
+    input {
+      background-color: $app-background-color !important;
+    }
+    background-color: $app-background-color !important;
+
+    .select-item {
+      background-color: $app-background-color !important;
+      font-family: Poppins;
+      font-size: 12px;
+      svg {
+        border-radius: 3px;
+      }
+    }
+
+    .select-item[aria-selected='true'] {
+      background-color: #fff !important;
+      svg {
+        path:nth-child(1) {
+          fill: grey !important;
+        }
+      }
+    }
+    .select-item[aria-selected='false'] {
+      svg {
+        path:nth-child(1) {
+          stroke: grey !important;
+        }
+      }
+    }
+  } // end select input
+
+  .item-renderer {
+    > span:first-child {
+      padding-top: 6px;
+      margin-right: 4px;
+    }
+    span:nth-child(2) {
+      justify-content: left !important;
+      span:nth-child(1) {
+        margin-right: 7px !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        max-width: 300px !important;
+      }
+    }
+  }
+
+  @media only screen and (max-width: $isima-large-device-breakpoint) {
+    .dropdown-content {
+      width: calc(100vw - 40px) !important;
+      right: -30px;
+    }
+  }
+}

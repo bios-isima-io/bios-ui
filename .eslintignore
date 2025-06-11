@@ -1,0 +1,8 @@
+# node_modules ignored by default
+/src/images/*
+/src/app/styles/fonts/*
+/src/components/react-multi-select/*
+/src/app/styles/font-icons-preview/*
+/src/containers/Learn/DocumentMarkup.js
+/src/serviceWorkerRegistration.js
+/src/svg/isimaIcon.js

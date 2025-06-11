@@ -1,0 +1,16 @@
+@import "app/styles/variable";
+
+.onboarding-wrapper{
+  .page-main-section{
+    .page-header{
+      margin-top: 38px; //This is because we have removed backlinks in onboarding for teach bios and detail pages.
+      @media (min-width: $isima-large-device-breakpoint){
+        margin-top:60px;
+      }
+    }
+  }
+  .page-header .mobile-row-2 {
+    margin-top: 40px;
+    width: calc(100% + 50px);
+  }
+}

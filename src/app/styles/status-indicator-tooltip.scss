@@ -1,0 +1,23 @@
+.source_status_tooltip {
+  .header {
+    font-weight: 600;
+    color: white;
+  }
+  .row {
+    margin-bottom: 5px;
+  }
+  .subsection-header {
+    border-top: 1px solid lightgrey;
+    font-weight: 600;
+    cursor: pointer;
+
+    .subsection-row {
+      margin-top: 5px;
+      padding-bottom: 2px;
+      color: white;
+    }
+  }
+  .stream-info {
+    margin-bottom: 5px;
+  }
+}
